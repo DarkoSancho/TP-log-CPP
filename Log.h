@@ -1,14 +1,14 @@
 /*************************************************************************
-                           Xxx  -  description
+                           Log  -  description
                              -------------------
     début                : $DATE$
     copyright            : (C) $YEAR$ par $AUTHOR$
     e-mail               : $EMAIL$
 *************************************************************************/
 
-//---------- Interface de la classe <Xxx> (fichier Xxx.h) ----------------
-#if ! defined ( XXX_H )
-#define XXX_H
+//---------- Interface de la classe <Log> (fichier Log.h) ----------------
+#if ! defined ( Log_H )
+#define Log_H
 
 //--------------------------------------------------- Interfaces utilisées
 
@@ -17,12 +17,12 @@
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
-// Rôle de la classe <Xxx>
+// Rôle de la classe <Log>
 //
 //
 //------------------------------------------------------------------------
 
-class Xxx : public Ancetre
+class Log
 {
 //----------------------------------------------------------------- PUBLIC
 
@@ -36,7 +36,7 @@ public:
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Xxx & operator = ( const Xxx & unXxx );
+    Log & operator = ( const Log & unLog );
     // Mode d'emploi :
     //
     // Contrat :
@@ -44,19 +44,19 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    Xxx ( const Xxx & unXxx );
+    Log ( const Log & unLog );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
     //
 
-    Xxx ( );
+    Log ( );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual ~Xxx ( );
+    virtual ~Log ( );
     // Mode d'emploi :
     //
     // Contrat :
@@ -71,7 +71,7 @@ protected:
 
 };
 
-//-------------------------------- Autres définitions dépendantes de <Xxx>
+//-------------------------------- Autres définitions dépendantes de <Log>
 
-#endif // XXX_H
+#endif // Log_H
 

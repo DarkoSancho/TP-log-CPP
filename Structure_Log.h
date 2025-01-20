@@ -1,14 +1,14 @@
 /*************************************************************************
-                           Xxx  -  description
+                           Structure_Log  -  description
                              -------------------
     début                : $DATE$
     copyright            : (C) $YEAR$ par $AUTHOR$
     e-mail               : $EMAIL$
 *************************************************************************/
 
-//---------- Interface de la classe <Xxx> (fichier Xxx.h) ----------------
-#if ! defined ( XXX_H )
-#define XXX_H
+//---------- Interface de la classe <Structure_Log> (fichier Structure_Log.h) ----------------
+#if ! defined ( Structure_Log_H )
+#define Structure_Log_H
 
 //--------------------------------------------------- Interfaces utilisées
 
@@ -17,12 +17,12 @@
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
-// Rôle de la classe <Xxx>
+// Rôle de la classe <Structure_Log>
 //
 //
 //------------------------------------------------------------------------
 
-class Xxx : public Ancetre
+class Structure_Log
 {
 //----------------------------------------------------------------- PUBLIC
 
@@ -36,7 +36,7 @@ public:
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Xxx & operator = ( const Xxx & unXxx );
+    Structure_Log & operator = ( const Structure_Log & unStructure_Log );
     // Mode d'emploi :
     //
     // Contrat :
@@ -44,19 +44,19 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    Xxx ( const Xxx & unXxx );
+    Structure_Log ( const Structure_Log & unStructure_Log );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
     //
 
-    Xxx ( );
+    Structure_Log ( );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual ~Xxx ( );
+    virtual ~Structure_Log ( );
     // Mode d'emploi :
     //
     // Contrat :
@@ -71,7 +71,7 @@ protected:
 
 };
 
-//-------------------------------- Autres définitions dépendantes de <Xxx>
+//-------------------------------- Autres définitions dépendantes de <Structure_Log>
 
-#endif // XXX_H
+#endif // Structure_Log_H
 

@@ -1,12 +1,12 @@
 /*************************************************************************
-                           Xxx  -  description
+                           Structure_Log  -  description
                              -------------------
     début                : $DATE$
     copyright            : (C) $YEAR$ par $AUTHOR$
     e-mail               : $EMAIL$
 *************************************************************************/
 
-//---------- Réalisation de la classe <Xxx> (fichier Xxx.cpp) ------------
+//---------- Réalisation de la classe <Structure_Log> (fichier Structure_Log.cpp) ------------
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -15,14 +15,14 @@ using namespace std;
 #include <iostream>
 
 //------------------------------------------------------ Include personnel
-#include "Xxx.h"
+#include "Structure_Log.h"
 
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-// type Xxx::Méthode ( liste des paramètres )
+// type Structure_Log::Méthode ( liste des paramètres )
 // Algorithme :
 //
 //{
@@ -30,7 +30,7 @@ using namespace std;
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Xxx & Xxx::operator = ( const Xxx & unXxx )
+Structure_Log & Structure_Log::operator = ( const Structure_Log & unStructure_Log )
 // Algorithme :
 //
 {
@@ -38,34 +38,34 @@ Xxx & Xxx::operator = ( const Xxx & unXxx )
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Xxx::Xxx ( const Xxx & unXxx )
+Structure_Log::Structure_Log ( const Structure_Log & unStructure_Log )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Xxx>" << endl;
+    cout << "Appel au constructeur de copie de <Structure_Log>" << endl;
 #endif
-} //----- Fin de Xxx (constructeur de copie)
+} //----- Fin de Structure_Log (constructeur de copie)
 
 
-Xxx::Xxx ( )
+Structure_Log::Structure_Log ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Xxx>" << endl;
+    cout << "Appel au constructeur de <Structure_Log>" << endl;
 #endif
-} //----- Fin de Xxx
+} //----- Fin de Structure_Log
 
 
-Xxx::~Xxx ( )
+Structure_Log::~Structure_Log ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Xxx>" << endl;
+    cout << "Appel au destructeur de <Structure_Log>" << endl;
 #endif
-} //----- Fin de ~Xxx
+} //----- Fin de ~Structure_Log
 
 
 //------------------------------------------------------------------ PRIVE
