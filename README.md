@@ -1,7 +1,7 @@
 init project
 
 Classe Jade + Tim:
-Ligne
+Log
 Structure_requete
 
 Classe Max + Tom
