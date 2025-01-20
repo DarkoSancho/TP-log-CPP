@@ -44,12 +44,6 @@ public:
     // Contrat :
     //
 
-    Lectrice ( );
-    // Mode d'emploi :
-    //COnstructeur par défault
-    // Contrat :
-    //
-
     Lectrice( ofstream& File);
     //Mode d'emploi :
     //COnstructeur à partir d'un fichier .log
@@ -115,7 +109,7 @@ protected:
     //
 //----------------------------------------------------- Attributs protégés
 
-    ofstream File; //Fichier .log
+    ofstream&  File; //Fichier .log
     string currentLog; //Log sur lequel nous sommes placé pour le parcours du .log
 };
 

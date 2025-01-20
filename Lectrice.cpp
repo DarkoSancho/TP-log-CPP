@@ -13,9 +13,10 @@
 //-------------------------------------------------------- Include système
 using namespace std;
 #include <iostream>
-
+#include <string>
+#include <fstream>
 //------------------------------------------------------ Include personnel
-#include "Xxx.h"
+#include "Lectrice.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -30,38 +31,27 @@ using namespace std;
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Xxx & Xxx::operator = ( const Xxx & unXxx )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- Constructeurs - destructeur
-Xxx::Xxx ( const Xxx & unXxx )
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au constructeur de copie de <Xxx>" << endl;
-#endif
-} //----- Fin de Xxx (constructeur de copie)
 
-
-Xxx::Xxx ( )
-// Algorithme :
-//
+Lectrice::Lectrice (ofstream &file )
 {
+    File = NULL;
+    currentLog = "";
 #ifdef MAP
     cout << "Appel au constructeur de <Xxx>" << endl;
 #endif
-} //----- Fin de Xxx
+} 
 
 
-Xxx::~Xxx ( )
+Lectrice::~Lectrice ( )
 // Algorithme :
 //
 {
+    if (File.is_open()){
+        File.close();
+    }
+    File = NULL;
 #ifdef MAP
     cout << "Appel au destructeur de <Xxx>" << endl;
 #endif
