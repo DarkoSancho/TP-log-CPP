@@ -18,7 +18,11 @@ using namespace std;
 //--------------------------------------------------- Interfaces utilisées
 
 //------------------------------------------------------------- Constantes
+const string FileName ="Fichier.log";
 
+const char SEPLOG = '\n'; // Char qui sépare 2 logs
+
+const string localURL= "http://intranet-if.insa-lyon.fr";
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
@@ -34,17 +38,52 @@ class Lectrice
 public:
 //----------------------------------------------------- Méthodes publiques
 
+// NA: penser à mettre la classe Log comme amie pour accéder aux données protected.
+    string getCurrentLog();
+
+    bool getnextLog();
+    // Mode d'emploi :
+    //Pour parcourir le fichier.log, nous donne le prochain log ous forme str
+    // Contrat :
+    //
+
+    string getIPEmet();
+    // Mode d'emploi :
+    //Donne l'adresse IP de l'émeteur
+    // Contrat :
+    //
+
+    string getTime();
+    // Mode d'emploi :
+    //Donne l'heure de l'émition (D/M/Y:h:mn:s delta GMT)
+    // Contrat :
+    //
+
+    string getURLTarget();
+    // Mode d'emploi :
+    //Donne l'URL nettoyée 
+    // Contrat :
+    //
+
+
+    string getURLReferer();
+    // Mode d'emploi :
+    //Donne l'URL du referer
+    // Contrat :
+    //
+
+    string getclearURLReferer();
+    // Mode d'emploi :
+    //Donne l'URL du referer sans base de l'URL si elle est locale
+    // Contrat :
+    //
+
 //------------------------------------------------- Surcharge d'opérateurs
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    Lectrice ( const Lectrice & uneLectrice );
-    // Mode d'emploi (constructeur de copie) :
-    //Constructeur de copie par défault
-    // Contrat :
-    //
 
-    Lectrice( ofstream& File);
+    Lectrice();
     //Mode d'emploi :
     //COnstructeur à partir d'un fichier .log
 
@@ -58,58 +97,9 @@ public:
 
 protected: 
 //----------------------------------------------------- Méthodes protégées
-// NA: penser à mettre la classe Log comme amie pour accéder aux données protected.
 
-    string getnextLog();
-    // Mode d'emploi :
-    //Pour parcourir le fichier.log, nous donne le prochain log ous forme str
-    // Contrat :
-    //
-
-    string getIPEmet(string sLog);
-    // Mode d'emploi :
-    //Donne l'adresse IP de l'émeteur
-    // Contrat :
-    //
-
-    string getTime(string sLog);
-    // Mode d'emploi :
-    //Donne l'heure de l'émition (D/M/Y:h:mn:s delta GMT)
-    // Contrat :
-    //
-
-    string getURLTarget(string sLog);
-    // Mode d'emploi :
-    //Donne l'URL nettoyée 
-    // Contrat :
-    //
-
-    int getstatus(string sLog);
-    // Mode d'emploi :
-    //Donne le status du code HTTP 
-    // Contrat :
-    //
-
-    int getWeightData(string sLog);
-    // Mode d'emploi :
-    //Donne la quantité de donnée transférées au serveur distant
-    // Contrat :
-    // 
-
-    string getURLReferer(string sLog);
-    // Mode d'emploi :
-    //Donne l'URL du referer
-    // Contrat :
-    //
-
-    string getNavClient(string sLog);
-    // Mode d'emploi :
-    //Donne l'identificateur du client navigateur
-    // Contrat :
-    //
 //----------------------------------------------------- Attributs protégés
-
-    ofstream&  File; //Fichier .log
+    ifstream file;
     string currentLog; //Log sur lequel nous sommes placé pour le parcours du .log
 };
 
