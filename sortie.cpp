@@ -15,7 +15,10 @@ using namespace std;
 #include <iostream>
 
 //------------------------------------------------------ Include personnel
-#include "Xxx.h"
+
+
+#include <cstring>
+#include <limits>
 
 //------------------------------------------------------------- Constantes
 
