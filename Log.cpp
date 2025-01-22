@@ -48,7 +48,7 @@ Log::Log ( const Log & unLog )
 } //----- Fin de Log (constructeur de copie)
 
 
-Log::Log ( )
+Log::Log ( ) //: tous les paramètres
 // Algorithme :
 //
 {
