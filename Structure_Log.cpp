@@ -1,9 +1,9 @@
 /*************************************************************************
                            Structure_Log  -  description
                              -------------------
-    début                : $DATE$
-    copyright            : (C) $YEAR$ par $AUTHOR$
-    e-mail               : $EMAIL$
+    début                : 23/01/2025
+    copyright            : (C) 2025 par ttavernier
+    e-mail               : timothee.tavernier@insa-lyon.fr
 *************************************************************************/
 
 //---------- Réalisation de la classe <Structure_Log> (fichier Structure_Log.cpp) ------------

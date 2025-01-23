@@ -1,14 +1,15 @@
 /*************************************************************************
                            Structure_Log  -  description
                              -------------------
-    début                : $DATE$
-    copyright            : (C) $YEAR$ par $AUTHOR$
-    e-mail               : $EMAIL$
+    début                : 23/01/2025
+    copyright            : (C) 2025 par ttavernier
+    e-mail               : timothee.tavernier@insa-lyon.fr
 *************************************************************************/
 
 //---------- Interface de la classe <Structure_Log> (fichier Structure_Log.h) ----------------
 #if ! defined ( Structure_Log_H )
 #define Structure_Log_H
+#include <Log.h>
 
 //--------------------------------------------------- Interfaces utilisées
 
@@ -28,11 +29,22 @@ class Structure_Log
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    void Ajoute ( Log unLog );
-    // Mode d'emploi : Met à jour les structures de données avec la Log en paramètre
+    void newVisit ( Log unLog );
+    // Mode d'emploi : Met à jour dico_visites avec un nouveau Log
     //
-    // Contrat :
+    // Contrat : Si le log ne respecte pas les options (mauvaise heure, mauvaise extension). 
+    // Ce ne sera pas pris en compte.
     //
+
+    void updateTop10 (/*unordered_map<string, int>*/);
+    // Mode d'emploi : Met à jour le top 10 des sites les plus visités (possiblement à partir d'un un autre fichier)
+    //
+    // Contrat : 
+    //
+
+    void createGraphe();
+
+
 
 
 //------------------------------------------------- Surcharge d'opérateurs
@@ -50,7 +62,7 @@ public:
     // Contrat :
     //
 
-    Structure_Log ( );
+    Structure_Log(int heure = -1, bool graphe = false, bool exclusions = false);
     // Mode d'emploi :
     //
     // Contrat :
@@ -60,40 +72,35 @@ public:
     // Mode d'emploi :
     //
     // Contrat :
-    //
+    //x
+
+    
+
+    
 
 //------------------------------------------------------------------ PRIVE
 
 protected:
 //----------------------------------------------------- Méthodes protégées
 
-// struct ? getTop10();
-// Mode d'emploi : Méthode qui crée le classement ordonné des 10 sites les plus visités
-// à partir de son attribut dico_visites (éventuellement avec méthode map de la prof)
-//      - soit en décla d'amitié à sortie, soit en public (plutôt ça je pense, à voir)
+
 //----------------------------------------------------- Attributs protégés
 
-/*
-graphe = unordered_map :
-- clé : string adresse_site
-- valeur : unordered map = voisins
-        - clé : string nom_voisin
-        - valeur : nb_liens
 
-
-dico_visites = unoredered_map :
-- clé : string nom_site
-- valeur : nb_visites
-*/
-
+multimap<int, string> top10;
+unordered_map<string, unordered_map<string, int>> graphe;
+unordered_map<string, int> dico_visites;
 bool makeGraphe;
 bool heure_creneau;
 bool exclusionExtensions;
+
 };
 
 //-------------------------------- Autres définitions dépendantes de <Structure_Log>
 
 #endif // Structure_Log_H
+
+
 
 /*
 Méthode de Lectrice à intégrer :
