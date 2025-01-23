@@ -9,7 +9,7 @@
 //---------- Interface de la classe <Structure_Log> (fichier Structure_Log.h) ----------------
 #if ! defined ( Structure_Log_H )
 #define Structure_Log_H
-#include <Log.h>
+#include "Log.h"
 #include <string>
 #include <map>
 
@@ -31,7 +31,7 @@ class Structure_Log
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    void NewVisit( Log unLog );
+    void NewLog( Log unLog );
     // Mode d'emploi : Met à jour dico_visites avec un nouveau Log
     //
     // Contrat : Si le log ne respecte pas les options (mauvaise heure, mauvaise extension). 

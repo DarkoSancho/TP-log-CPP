@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Log.h"
-//#include "Structure_Log.h"
+
+#include "Structure_Log.h"
 
 using namespace std;
 
@@ -19,12 +20,12 @@ int main() {
     cout << "Navigateur: " << log1.getIdNavigateur() << endl;
 
     // Crée une instance de Structure_Log et ajoute le log
-    /*
+    
     Structure_Log structureLog;
-    structureLog.Ajoute(log1);
+    //structureLog.Ajoute(log1);
 
     cout << "Le log a été ajouté à Structure_Log avec succès." << endl;
-    */
+    
     return 0;
 }
 

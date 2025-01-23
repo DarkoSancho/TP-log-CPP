@@ -23,22 +23,26 @@
 
     //----------------------------------------------------- Méthodes publiques
 
-    void Structure_Log::NewVisit( Log unLog )
+    void Structure_Log::NewLog( Log unLog )
     {
+
     }
 
     void Structure_Log::UpdateTop10()
     {
+
     }
 
     void Structure_Log::CreateGraphe()
     {
+
     }
 
     //------------------------------------------------- Surcharge d'opérateurs
 
     Structure_Log & Structure_Log::operator = ( const Structure_Log & unStructure_Log )
     {
+
     } 
 
 
