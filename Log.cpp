@@ -30,14 +30,16 @@ using namespace std;
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Log & Log::operator = ( const Log & unLog )
+/*Log & Log::operator = ( const Log & unLog )
 // Algorithme :
 //
 {
 } //----- Fin de operator =
-
+*/
 
 //-------------------------------------------- Constructeurs - destructeur
+
+/*
 Log::Log ( const Log & unLog )
 // Algorithme :
 //
@@ -57,7 +59,7 @@ Log::Log ( ) //: tous les paramètres
 #endif
 } //----- Fin de Log
 
-
+*/
 Log::~Log ( )
 // Algorithme :
 //
@@ -71,4 +73,3 @@ Log::~Log ( )
 //------------------------------------------------------------------ PRIVE
 
 //----------------------------------------------------- Méthodes protégées
-

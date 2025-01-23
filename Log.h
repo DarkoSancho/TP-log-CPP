@@ -60,7 +60,7 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    Log ( const Log & unLog );
+    //Log ( const Log & unLog );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
