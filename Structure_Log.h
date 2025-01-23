@@ -10,6 +10,8 @@
 #if ! defined ( Structure_Log_H )
 #define Structure_Log_H
 #include <Log.h>
+#include <string>
+#include <map>
 
 //--------------------------------------------------- Interfaces utilisées
 
@@ -29,20 +31,20 @@ class Structure_Log
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    void newVisit( Log unLog );
+    void NewVisit( Log unLog );
     // Mode d'emploi : Met à jour dico_visites avec un nouveau Log
     //
     // Contrat : Si le log ne respecte pas les options (mauvaise heure, mauvaise extension). 
     // Ce ne sera pas pris en compte.
     //
 
-    void updateTop10();
+    void UpdateTop10();
     // Mode d'emploi : Met à jour le top 10 des sites les plus visités
     //
     // Contrat : 
     //
 
-    void createGraphe();
+    void CreateGraphe();
 
 
 
