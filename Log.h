@@ -68,6 +68,14 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
+string date; //Autre type?
+int heure;
+string type_action;
+string url_cible;
+int status;
+int taille_reponse;
+string referer;
+string id_navigateur;
 
 };
 
