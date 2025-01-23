@@ -12,6 +12,7 @@
 #include "Log.h"
 #include <string>
 #include <map>
+#include <unordered_map>
 
 //--------------------------------------------------- Interfaces utilisées
 
@@ -31,17 +32,20 @@ class Structure_Log
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    void NewLog( Log unLog );
+
+    void Affiche() const;
+
+    void NewLog( Log & unLog );
     // Mode d'emploi : Met à jour dico_visites avec un nouveau Log
     //
-    // Contrat : Si le log ne respecte pas les options (mauvaise heure, mauvaise extension). 
-    // Ce ne sera pas pris en compte.
+    // Contrat : Si le log ne respecte pas les options (mauvaise heure, mauvaise extension),
+    // il ne sera pas pris en compte.
     //
 
     void UpdateTop10();
     // Mode d'emploi : Met à jour le top 10 des sites les plus visités
     //
-    // Contrat : 
+    // Contrat :
     //
 
     void CreateGraphe();
@@ -76,9 +80,9 @@ public:
     // Contrat :
     //x
 
-    
 
-    
+
+
 
 //------------------------------------------------------------------ PRIVE
 
@@ -93,7 +97,7 @@ multimap<int, string> top10;
 unordered_map<string, unordered_map<string, int>> graphe;
 unordered_map<string, int> dico_visites;
 bool makeGraphe;
-bool heure_creneau;
+int heure_creneau;
 bool exclusionExtensions;
 
 };
@@ -114,4 +118,3 @@ Méthode de Lectrice à intégrer :
     c- Ajout de ce Log à Structure_Log
 3- Renvoi (ou mise à jour) de la StructLog
 */
-

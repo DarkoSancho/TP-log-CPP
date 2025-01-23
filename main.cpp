@@ -5,9 +5,12 @@
 
 using namespace std;
 
-int main() {
-    // Crée un objet Log
+int test_logs() {
+    // Crée objets Log
     Log log1("2025-01-23", 14, "GET", "/home", 200, 1024, "http://example.com", "Mozilla/5.0");
+    Log log2("2025-01-23", 16, "GET", "/home", 200, 1024, "http://example2.com", "Mozilla/5.0");
+    Log log3("2025-01-23", 16, "GET", "/home", 200, 1024, "http://example.com", "Mozilla/5.0");
+    Log log4("2025-01-23", 14, "GET", "/http://example2.com", 200, 1024, "http://example.com", "Mozilla/5.0");
 
     // Affiche les informations du log
     cout << "Date: " << log1.getDate() << endl;
@@ -20,13 +23,24 @@ int main() {
     cout << "Navigateur: " << log1.getIdNavigateur() << endl;
 
     // Crée une instance de Structure_Log et ajoute le log
-    
-    Structure_Log structureLog;
-    //structureLog.Ajoute(log1);
+    cout << "Création de structureLog et ajouts des logs" << endl;
+    Structure_Log structureLog; //mettre structureLog(16) pour une heure spécifique
+    structureLog.NewLog(log1);
+    structureLog.NewLog(log2);
+    structureLog.NewLog(log3);
+    structureLog.NewLog(log4);
 
-    cout << "Le log a été ajouté à Structure_Log avec succès." << endl;
-    
+    cout << "Affichage de structLog" << endl;
+    structureLog.Affiche();
+
+
+
     return 0;
 }
 
-//Chemin : /home/jguedira/INSA_3A/C++/TP-log-CPP
+int main() {
+  test_logs();
+  return 0;
+}
+
+//Chemin : /home/jguedira/INSA_3A/C++/TP-log-CPP_v1
