@@ -29,15 +29,15 @@ class Structure_Log
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    void newVisit ( Log unLog );
+    void newVisit( Log unLog );
     // Mode d'emploi : Met à jour dico_visites avec un nouveau Log
     //
     // Contrat : Si le log ne respecte pas les options (mauvaise heure, mauvaise extension). 
     // Ce ne sera pas pris en compte.
     //
 
-    void updateTop10 (/*unordered_map<string, int>*/);
-    // Mode d'emploi : Met à jour le top 10 des sites les plus visités (possiblement à partir d'un un autre fichier)
+    void updateTop10();
+    // Mode d'emploi : Met à jour le top 10 des sites les plus visités
     //
     // Contrat : 
     //
