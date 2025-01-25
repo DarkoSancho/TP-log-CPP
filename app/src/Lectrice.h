@@ -18,7 +18,7 @@ using namespace std;
 //--------------------------------------------------- Interfaces utilisées
 
 //------------------------------------------------------------- Constantes
-const string FileName ="/TP-log-CPP/app/Fichier.log";
+const string FileName ="Fichier.log";
 
 const char SEPLOG = '\n'; // Char qui sépare 2 logs
 
@@ -83,6 +83,12 @@ public:
     //Donne le type d'action
     // Contrat :
     //
+
+    int getStatus();
+
+    int getDataSize();
+
+    string getIDNavigator();
 //------------------------------------------------- Surcharge d'opérateurs
 
 

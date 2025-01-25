@@ -17,7 +17,7 @@ using namespace std;
 #include <fstream>
 //------------------------------------------------------ Include personnel
 #include "Lectrice.h"
-
+#include "Log.h"
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC
@@ -88,6 +88,59 @@ string Lectrice::getclearURLReferer(){
         return URL;
     }
 }
+
+string Lectrice::getActionType(){
+    string action;
+    int pos1, pos2;  
+    pos1 = currentLog.find('"');   
+    string str1 = currentLog.substr(pos1+1);
+    pos2 = str1.find('/');
+    string str2 = str1.substr(0,pos2-1);
+    return str2;
+}
+
+int Lectrice::getStatus(){
+    int pos1, pos2, pos3; //Occurence des i_éme '"'    
+    pos1 = currentLog.find('"');   
+    string str1 = currentLog.substr(pos1+1);
+    pos2 = str1.find('"');
+    string str2 = str1.substr(pos2+1);
+    pos3= str2.find('"');
+    string str3 = str2.substr(1,pos3-1);
+    int posespace =str3.find(" ");
+    string sstatus=str3.substr(0,posespace);
+    int status = stoi(sstatus); //Convertit le string en enter
+    return status;
+}
+
+int Lectrice::getDataSize(){
+    int pos1, pos2, pos3; //Occurence des i_éme '"'    
+    pos1 = currentLog.find('"');   
+    string str1 = currentLog.substr(pos1+1);
+    pos2 = str1.find('"');
+    string str2 = str1.substr(pos2+1);
+    pos3= str2.find('"');
+    string str3 = str2.substr(1,pos3-1);
+    int posespace =str3.find(" ");
+    string ssize=str3.substr(posespace);
+    int size = stoi(ssize); //Convertit le string en enter
+    return size;
+}
+
+string Lectrice::getIDNavigator(){
+    int pos1, pos2, pos3, pos4,pos5; //Occurence des i_éme '"'    
+    pos1 = currentLog.find('"');   
+    string str1 = currentLog.substr(pos1+1);
+    pos2 = str1.find('"');
+    string str2 = str1.substr(pos2+1);
+    pos3= str2.find('"');
+    string str3 = str2.substr(pos3+1);
+    pos4 = str3.find('"');
+    string str4=str3.substr(pos4);
+    return str4.substr(3,str4.length()-2);
+}
+
+
 //------------------------------------------------- Surcharge d'opérateurs
 
 //-------------------------------------------- Constructeurs - destructeur

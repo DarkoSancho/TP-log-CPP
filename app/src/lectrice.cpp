@@ -89,12 +89,11 @@ string Lectrice::getclearURLReferer(){
 }
 
 string Lectrice::getActionType(){
-    string action;
     int pos1, pos2;  
     pos1 = currentLog.find('"');   
     string str1 = currentLog.substr(pos1+1);
     pos2 = str1.find('/');
-    string str2 = str1.substr(pos2-1);
+    string str2 = str1.substr(0,pos2-1);
     return str2;
 }
 //------------------------------------------------- Surcharge d'opérateurs
