@@ -6,5 +6,5 @@ using namespace std;
 
 int main(){
     Lectrice L;
-    cout<<L.getIDNavigator()<<endl;
+    cout<<L.getTimeDate()<<endl;
 }

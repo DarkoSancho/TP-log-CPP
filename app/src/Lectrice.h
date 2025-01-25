@@ -53,12 +53,24 @@ public:
     // Contrat :
     //
 
-    string getTime();
+    string getTimeDate();
     // Mode d'emploi :
-    //Donne l'heure de l'émition (D/M/Y:h:mn:s delta GMT)
     // Contrat :
     //
 
+    string getDate();
+    // Mode d'emploi :
+    //Donne la date de l'émition (D/M/Y) 
+    // Contrat :
+    //
+
+    int getFuseau();
+    
+    int getTime();
+    // Mode d'emploi :
+    //Donne l'heure de l'émition en seconde au fuseau GMT
+    // Contrat :
+    //
     string getURLTarget();
     // Mode d'emploi :
     //Donne l'URL nettoyée 

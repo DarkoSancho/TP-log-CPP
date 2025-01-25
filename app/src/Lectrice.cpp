@@ -17,7 +17,6 @@ using namespace std;
 #include <fstream>
 //------------------------------------------------------ Include personnel
 #include "Lectrice.h"
-#include "Log.h"
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC
@@ -45,14 +44,45 @@ string Lectrice::getIPEmet(){
     return currentLog.substr(0,pos-1); // Il y a un espace avant le tiré
 }
 
-string Lectrice::getTime(){
+string Lectrice::getTimeDate(){
     string Time;
     int posd;
     int posf;
     posd=currentLog.find('[');
     posf=currentLog.find(']');
-    cout<<posf<<endl;
     return currentLog.substr(posd+1,posf-posd-1); 
+}
+
+string Lectrice::getDate(){
+    string str = getTimeDate();
+    int pos = str.find(":");
+    return str.substr(0,pos); 
+}
+
+int Lectrice::getFuseau(){
+    string str = getTimeDate();
+    int pos = str.find(":");
+    string str2 = str.substr(pos+1);
+    string sfuseau1= str2.substr(9);
+    string sfuseau = sfuseau1.substr(0,sfuseau1.length()-2); // Garde les 3 premiers caractéres
+    return stoi(sfuseau);
+
+}
+
+int Lectrice::getTime(){
+    string str = getTimeDate();
+    int pos = str.find(":");
+    string str2 = str.substr(pos+1);
+    string stime= str2.substr(0,8);
+    cout<<stime<<endl;
+    string sheure=stime.substr(0,2);
+    cout<<sheure<<endl;
+    string sminute=stime.substr(3,2);
+    cout<<sminute<<endl;
+    string sseconde=stime.substr(6,2);
+    cout<<sseconde<<endl;
+    int fuseau = getFuseau();
+    return 3600*(stoi(sheure)-fuseau)+60*stoi(sminute)+stoi(sseconde);
 }
 
 string Lectrice::getURLTarget(){
@@ -106,7 +136,7 @@ int Lectrice::getStatus(){
     pos2 = str1.find('"');
     string str2 = str1.substr(pos2+1);
     pos3= str2.find('"');
-    string str3 = str2.substr(1,pos3-1);
+    string str3 = str2.substr(1);
     int posespace =str3.find(" ");
     string sstatus=str3.substr(0,posespace);
     int status = stoi(sstatus); //Convertit le string en enter
@@ -120,7 +150,7 @@ int Lectrice::getDataSize(){
     pos2 = str1.find('"');
     string str2 = str1.substr(pos2+1);
     pos3= str2.find('"');
-    string str3 = str2.substr(1,pos3-1);
+    string str3 = str2.substr(1);
     int posespace =str3.find(" ");
     string ssize=str3.substr(posespace);
     int size = stoi(ssize); //Convertit le string en enter
@@ -137,7 +167,7 @@ string Lectrice::getIDNavigator(){
     string str3 = str2.substr(pos3+1);
     pos4 = str3.find('"');
     string str4=str3.substr(pos4);
-    return str4.substr(3,str4.length()-2);
+    return str4.substr(3,str4.length()-4);
 }
 
 
