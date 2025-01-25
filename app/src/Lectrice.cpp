@@ -94,7 +94,7 @@ string Lectrice::getclearURLReferer(){
 
 Lectrice::Lectrice ()
 {
-    file.open(FileName);
+    file.open("Fichier.log");
     if (!file.is_open()){
         cerr << "Erreur lors de l'ouverture du fichier " << endl;
     }

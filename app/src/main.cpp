@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Log.h"
-
+#include <string>
+#include <fstream>
+#include "Lectrice.h"
 #include "Structure_Log.h"
 
 using namespace std;
@@ -38,8 +40,14 @@ int test_logs() {
     return 0;
 }
 
+int test_lectrice(){
+
+    Lectrice L;
+    cout<<L.getclearURLReferer()<<endl;
+}
+
 int main() {
-  test_logs();
+  test_lectrice();
   return 0;
 }
 
