@@ -89,14 +89,14 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
-string date; //Autre type?
+string date; 
 int heure;
-string type_action;
+string type_action; 
 string url_cible;
-int status;
-int taille_reponse;
+int status; 
+int taille_reponse; 
 string referer;
-string id_navigateur;
+string id_navigateur; 
 
 };
 

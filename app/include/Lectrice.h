@@ -78,6 +78,11 @@ public:
     // Contrat :
     //
 
+    string getActionType();
+    // Mode d'emploi :
+    //Donne le type d'action
+    // Contrat :
+    //
 //------------------------------------------------- Surcharge d'opérateurs
 
 
