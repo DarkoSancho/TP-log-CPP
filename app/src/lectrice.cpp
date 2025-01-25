@@ -51,7 +51,6 @@ string Lectrice::getTime(){
     int posf;
     posd=currentLog.find('[');
     posf=currentLog.find(']');
-    cout<<posf<<endl;
     return currentLog.substr(posd+1,posf-posd-1); 
 }
 
@@ -104,7 +103,7 @@ string Lectrice::getActionType(){
 
 Lectrice::Lectrice ()
 {
-    file.open(FileName);
+    file.open("Fichier.log");
     if (!file.is_open()){
         cerr << "Erreur lors de l'ouverture du fichier " << endl;
     }

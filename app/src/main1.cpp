@@ -6,5 +6,5 @@ using namespace std;
 
 int main(){
     Lectrice L;
-    cout<<L.getActionType()<<endl;
+    cout<<L.getTime()<<endl;
 }
