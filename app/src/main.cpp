@@ -7,6 +7,8 @@
 
 using namespace std;
 
+int getHeure(string );
+
 int test_logs() {
     // Crée objets Log
     Log log1("2025-01-23", 14, "GET", "/home", 200, 1024, "http://example.com", "Mozilla/5.0");
