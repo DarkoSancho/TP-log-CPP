@@ -8,4 +8,5 @@ digraph {
     node1 -> node2 [label="2"];
     node2 -> node3 [label="2"];
     node3 -> node1 [label="1"];
+    node3 -> node2 [label="1"];
 }

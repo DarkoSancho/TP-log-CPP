@@ -1,1 +1,2 @@
-cat 
+./analog [-g Fichier.dot] Fichier.log
+   
