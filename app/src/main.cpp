@@ -4,6 +4,7 @@
 #include <fstream>
 #include "Lectrice.h"
 #include "Structure_Log.h"
+#include "Sortie.h"
 
 using namespace std;
 
@@ -184,26 +185,46 @@ int main(int argc, char** argv)
 
     }
 
-    cout << "exclusion: " << exclusion << endl;
-    cout << "nomLog: " << nomLog << endl;
-    cout << "nomLogPresent: " << nomLogPres << endl;
-    cout << "heurePres: " << heurePresent << endl;
-    cout << "heure: " << heure << endl;
-    cout << "FaireGraph: " << faireGraph << endl;
-    cout << "Graph: " << nomGraphe << endl;
-    cout << "ArgsValid: " << argsValid << endl;
+    
 
     if (!argsValid || !nomLogPres)
     {
       cerr << "Paramètres invalide: Usage: ./analog [-g nomfichier.dot] [-e] [-t heure] nomfichier.log" << endl;
+      return;
     }
+
+  Structure_Log * log_SD;
+  if (heurePresent)
+  {
+    log_SD = new Structure_Log(heure, faireGraph, exclusion);
+  }
+  else
+  {
+    Structure_Log * log_SD = new Structure_Log(faireGraph,exclusion);
+  }
+  
+  if (URL_LocalPre)
+  {
+    log_SD->readFile(nomLog, URL_Local);
+  }
+  else
+  {
+    log_SD->readFile(nomLog);
+  }
+  Sortie * affichage = new Sortie(log_SD);
+
+  affichage->AffichageTop10();
+  if (faireGraph)
+  {
+    affichage->EcritGraphe(nomGraphe);
+  }
+
     
 }
 
           
 
-//echo "Usage: ./analog [-g nomfichier.dot] [-e] [-t heure] nomfichier.log  "
-// rajouter des options ??
+
 
 int getHeure(string strHeure)
 {

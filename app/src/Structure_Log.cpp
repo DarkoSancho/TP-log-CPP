@@ -129,14 +129,9 @@ Structure_Log::~Structure_Log()
 } //----- Fin de ~Structure_Log
 
 
-<<<<<<< HEAD
-void Structure_Log::readFile(string nomFichier){
-        Lectrice lectrice = Lectrice(nomFichier);
-=======
 void Structure_Log::readFile(string nomFichier, string nomURL){
         Log cur_log;
-        Lectrice lectrice = Lectrice(nomFichier, nomUrl);
->>>>>>> b992efe (modif readFile)
+        Lectrice lectrice = Lectrice(nomFichier, nomURL);
         while (lectrice.getnextLog()){
             Log cur_log = Log(lectrice.getDate(), lectrice.getTime(), lectrice.getActionType(),
                 lectrice.getURLTarget(), lectrice.getStatus(), lectrice.getDataSize(),
