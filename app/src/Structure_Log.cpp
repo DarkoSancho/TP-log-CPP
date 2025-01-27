@@ -57,7 +57,7 @@ void Structure_Log::AfficheTop10()
         std::reverse(reversedTop10.begin(), reversedTop10.end());
         
         for (const auto& [nbvisites, site] : reversedTop10) {
-            cout << "  " << site << " : " << nbvisites << "\n";
+            cout << "  " << site << " : " << nbvisites << " (hits) \n";
         }
     }
 
