@@ -48,7 +48,7 @@ public:
     // Contrat :
     //
 
-    void litFichier(nomFichier);
+    void readFile(nomFichier);
 
     string CreateGraphe();
 

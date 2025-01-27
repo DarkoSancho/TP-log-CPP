@@ -118,7 +118,7 @@ Structure_Log::~Structure_Log()
 } //----- Fin de ~Structure_Log
 
 //Nouveau :
-void Structure_Log::litFichier(nomFichier){
+void Structure_Log::readFile(nomFichier){
         Log cur_log;
         Lectrice lectrice = Lectrice(nomFichier);
         while (lectrice.getnextLog()){
