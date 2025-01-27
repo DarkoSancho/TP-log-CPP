@@ -175,9 +175,10 @@ string Lectrice::getIDNavigator(){
 
 //-------------------------------------------- Constructeurs - destructeur
 
-Lectrice::Lectrice ()
+Lectrice::Lectrice (string lefileName, string laLocalURL)
 {
-    file.open("Fichier.log");
+    file.open(lefileName);
+    localURL = laLocalURL;
     if (!file.is_open()){
         cerr << "Erreur lors de l'ouverture du fichier " << endl;
     }
