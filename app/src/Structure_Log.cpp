@@ -46,6 +46,7 @@ void Structure_Log::Affiche() const {
 
 void Structure_Log::AfficheTop10()  
     {
+        UpdateTop10();
         cout << "Classement des 10 sites les plus visités:\n";
         for (const auto& [nbvisites, site] : top10) {
             cout << "  " << site << " : " << nbvisites << "\n";
@@ -100,7 +101,9 @@ void Structure_Log::UpdateTop10()
 
 void Structure_Log::readFile(string nomFichier, string nomURL){
         Lectrice lectrice(nomFichier, nomURL);
+        
         while (lectrice.getnextLog()){
+            
             Log cur_log(lectrice.getDate(), lectrice.getTime(), lectrice.getActionType(),
                 lectrice.getURLTarget(), lectrice.getStatus(), lectrice.getDataSize(),
                 lectrice.getclearURLReferer(), lectrice.getIDNavigator());
@@ -170,9 +173,7 @@ Structure_Log::Structure_Log(bool graphe, bool exclusions, int heure)
     heure_creneau = heure;
     makeGraphe = graphe;
     exclusionExtensions = exclusions;
-    cout << heure_creneau <<endl;
-    cout << makeGraphe << endl;
-    cout << exclusionExtensions << endl;
+    
 
 } //----- Fin de Structure_Log
 

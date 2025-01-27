@@ -203,7 +203,7 @@ int main(int argc, char** argv)
   }
   else
   {
-    Structure_Log * log_SD = new Structure_Log(faireGraph,exclusion);
+    log_SD = new Structure_Log(faireGraph,exclusion);
   }
   
   
@@ -216,8 +216,9 @@ int main(int argc, char** argv)
   {
     
     log_SD->readFile(nomLog);
+    
   }
-  cout << "test"<< endl;
+  
   Sortie * affichage = new Sortie(log_SD);
 
   affichage->AffichageTop10();

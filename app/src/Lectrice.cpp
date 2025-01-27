@@ -182,7 +182,7 @@ Lectrice::Lectrice (string lefileName, string laLocalURL)
     if (!file.is_open()){
         cerr << "Erreur lors de l'ouverture du fichier " << endl;
     }
-    getline(file,currentLog,SEPLOG);
+    //getline(file,currentLog,SEPLOG);
 #ifdef MAP
     cout << "Appel au constructeur de <Xxx>" << endl;
 #endif
