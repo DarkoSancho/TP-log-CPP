@@ -17,6 +17,7 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Structure_Log.h"
 #include <unordered_map>
+#include <vector>
 
 //------------------------------------------------------------- Constantes
 
