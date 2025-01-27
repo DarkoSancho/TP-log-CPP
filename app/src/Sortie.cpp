@@ -71,7 +71,7 @@ void Sortie::AffichageTop10 ( )
 cout << "Appel de la méthode AffichageTop10 de <Sortie>" << endl;
 #endif
     cout << "Affichage des 10 sites les plus visités:" << endl;
-    struct_log->Affiche();
+    struct_log->AfficheTop10();
     
 
 } //----- Fin de AffichageTop10

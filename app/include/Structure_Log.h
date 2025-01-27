@@ -80,7 +80,7 @@ public:
     // Contrat :
     //
 
-    Structure_Log(int heure = -1, bool graphe = false, bool exclusions = false);
+    Structure_Log( bool graphe = false, bool exclusions = false, int heure = -1);
     // Mode d'emploi :
     //
     // Contrat :

@@ -162,7 +162,7 @@ Structure_Log::Structure_Log(const Structure_Log &unStructure_Log)
 #endif
 } //----- Fin de Structure_Log (constructeur de copie)
 
-Structure_Log::Structure_Log(int heure, bool graphe, bool exclusions)
+Structure_Log::Structure_Log(bool graphe, bool exclusions, int heure)
 {
 #ifdef MAP
     cout << "Appel au constructeur de <Structure_Log>" << endl;
@@ -170,6 +170,9 @@ Structure_Log::Structure_Log(int heure, bool graphe, bool exclusions)
     heure_creneau = heure;
     makeGraphe = graphe;
     exclusionExtensions = exclusions;
+    cout << heure_creneau <<endl;
+    cout << makeGraphe << endl;
+    cout << exclusionExtensions << endl;
 
 } //----- Fin de Structure_Log
 

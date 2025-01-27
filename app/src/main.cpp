@@ -199,21 +199,25 @@ int main(int argc, char** argv)
   Structure_Log * log_SD;
   if (heurePresent)
   {
-    log_SD = new Structure_Log(heure, faireGraph, exclusion);
+    log_SD = new Structure_Log(faireGraph, exclusion, heure);
   }
   else
   {
     Structure_Log * log_SD = new Structure_Log(faireGraph,exclusion);
   }
   
+  
   if (URL_LocalPre)
   {
+    
     log_SD->readFile(nomLog, URL_Local);
   }
   else
   {
+    
     log_SD->readFile(nomLog);
   }
+  cout << "test"<< endl;
   Sortie * affichage = new Sortie(log_SD);
 
   affichage->AffichageTop10();

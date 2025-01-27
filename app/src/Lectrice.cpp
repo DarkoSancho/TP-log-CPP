@@ -74,13 +74,13 @@ int Lectrice::getTime(){
     int pos = str.find(":");
     string str2 = str.substr(pos+1);
     string stime= str2.substr(0,8);
-    cout<<stime<<endl;
+    
     string sheure=stime.substr(0,2);
-    cout<<sheure<<endl;
+    
     string sminute=stime.substr(3,2);
-    cout<<sminute<<endl;
+    
     string sseconde=stime.substr(6,2);
-    cout<<sseconde<<endl;
+    
     int fuseau = getFuseau();
     return 3600*(stoi(sheure)-fuseau)+60*stoi(sminute)+stoi(sseconde);
 }
