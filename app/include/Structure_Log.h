@@ -48,6 +48,12 @@ public:
     // Contrat :
     //
 
+    void AfficheTop10();
+    // Mode d'emploi : Affiche le top 10 des sites les plus visités
+    //
+    // Contrat :
+    //
+
     string CreateGraphe();
 
     
