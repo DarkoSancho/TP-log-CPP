@@ -99,10 +99,9 @@ void Structure_Log::UpdateTop10()
 // }
 
 void Structure_Log::readFile(string nomFichier, string nomURL){
-        Log cur_log;
-        Lectrice lectrice = Lectrice(nomFichier, nomUrl);
+        Lectrice lectrice(nomFichier, nomURL);
         while (lectrice.getnextLog()){
-            Log cur_log = Log(lectrice.getDate(), lectrice.getTime(), lectrice.getActionType(),
+            Log cur_log(lectrice.getDate(), lectrice.getTime(), lectrice.getActionType(),
                 lectrice.getURLTarget(), lectrice.getStatus(), lectrice.getDataSize(),
                 lectrice.getclearURLReferer(), lectrice.getIDNavigator());
 
@@ -111,6 +110,9 @@ void Structure_Log::readFile(string nomFichier, string nomURL){
     }
 
 string Structure_Log::CreateGraphe(){
+  string res = "test";
+  return res;
+  /*
     // Mode d'emploi : renvoie un string du graphe répresentant les visites du site
     //
     // Contrat : utilisé dans la classe Sortie pour créer le graphe
@@ -140,13 +142,15 @@ string Structure_Log::CreateGraphe(){
     // Add edges with labels
     for (const auto& [node, neighbors] : graphe) {
         for (const auto& [neighbor, weight] : neighbors) {
-            dotContent << "node" << nodeMap[node] << " -> node" << nodeMap[neighbor] 
+            dotContent << "node" << nodeMap[node] << " -> node" << nodeMap[neighbor]
                         << " [label=\"" << weight << "\"];\n";
         }
     }
 
     dotContent << "}";
     return dotContent.str();
+    */
+
 }
 
 //------------------------------------------------- Surcharge d'opérateurs
