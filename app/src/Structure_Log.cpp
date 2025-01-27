@@ -50,6 +50,25 @@ void Structure_Log::NewLog(Log & unLog)
 
 void Structure_Log::UpdateTop10()
 {
+    // Clear the top10 before updating
+    top10.clear();
+    
+    // Create a vector of pairs (visit_count, url) from dico_visites
+    vector<pair<int, string>> sorted_visits;
+    for (const auto& entry : dico_visites) {
+        sorted_visits.push_back({entry.second, entry.first});
+    }
+    
+    // Sort the vector based on visit count (descending order)
+    sort(sorted_visits.rbegin(), sorted_visits.rend());
+
+    // Insert the top 10 into the multimap
+    int count = 0;
+    for (const auto& entry : sorted_visits) {
+        if (count >= 10) break;  // Stop after adding 10 entries
+        top10.insert({entry.first, entry.second});
+        count++;
+    }
 }
 
 void Structure_Log::CreateGraphe()
