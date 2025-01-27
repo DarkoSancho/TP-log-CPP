@@ -156,7 +156,7 @@ int Lectrice::getDataSize(){
     int posespace =str2.find(" ");
     string ssize1=str2.substr(posespace);
     pos4 = ssize1.find('"');
-    cout<<"OK"<<endl;
+    
     string ssize = ssize1.substr(0,ssize1.length()-ssize1.find('"')-1);
     if (ssize1 == "-"){
         return -1;
