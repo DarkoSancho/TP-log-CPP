@@ -8,6 +8,7 @@
 using namespace std;
 
 int getHeure(string );
+void messageErreur();
 
 int test_logs() {
     // Crée objets Log
@@ -67,6 +68,9 @@ int main(int argc, char** argv)
     bool nomLogPres = false;
     string nomLog;
 
+    bool URL_LocalPre = false;
+    string URL_Local;
+
     bool exclusion = false;
 
     bool heurePresent;
@@ -87,7 +91,8 @@ int main(int argc, char** argv)
             if (i == argc - 1)
             {
                 argsValid = false;
-                cerr << "Paramètre non valide pour l'option -g : aucun paramètre, Usage: ./analog [-g nomfichier.dot] [-e] [-t heure] nomfichier.log " << endl;
+                cerr << "Paramètre non valide pour l'option -g : aucun paramètre "<< endl;
+                messageErreur();
             }
             else
             {
@@ -96,7 +101,8 @@ int main(int argc, char** argv)
                 if (nextArg[0] == '-') // Si c'est une autre option, afficher une erreur
                 {
                     argsValid = false;
-                    cerr << "Paramètre attendu pour -g, mais obtenu : " << nextArg << "  Usage: ./analog [-g nomfichier.dot] [-e] [-t heure] nomfichier.log" << endl;
+                    cerr << "Paramètre attendu pour -g, mais obtenu : " << nextArg  << endl;
+                    messageErreur();
                 }
                 else
                 {
@@ -114,7 +120,8 @@ int main(int argc, char** argv)
             if (i == argc - 1)
             {
                 argsValid = false;
-                cerr << "Paramètre non valide pour l'option -t : aucun paramètre, Usage: ./analog [-g nomfichier.dot] [-e] [-t heure] nomfichier.log " << endl;
+                cerr << "Paramètre non valide pour l'option -t : aucun paramètre " << endl;
+                messageErreur();
             }
             else
             {
@@ -123,12 +130,14 @@ int main(int argc, char** argv)
                 if (nextArg[0] == '-') // Si c'est une autre option, afficher une erreur
                 {
                     argsValid = false;
-                    cerr << "Paramètre attendu pour -t, mais obtenu : " << nextArg << "  ,Usage: ./analog [-g nomfichier.dot] [-e] [-t heure] nomfichier.log" << endl;
+                    cerr << "Paramètre attendu pour -t, mais obtenu : " << nextArg << endl;
+                    messageErreur();
                 }
                 else if (getHeure(nextArg) == -1)
                 {
                   argsValid = false;
-                  cerr << "Paramètre attendu pour -t, mais obtenu : " << nextArg << "n'est pas valide (compris entre 0 et 23 ou n'est pas un nombre),  Usage: ./analog [-g nomfichier.dot] [-e] [-t heure] nomfichier.log" << endl;
+                  cerr << "Paramètre attendu pour -t, mais obtenu : " << nextArg << "n'est pas valide (compris entre 0 et 23 ou n'est pas un nombre)g" << endl;
+                  messageErreur();
                 }
                 else
                 {
@@ -141,6 +150,31 @@ int main(int argc, char** argv)
         {
           nomLogPres = true;
           nomLog = argCurrent;
+        }
+        else if (argCurrent == "-u")
+        {
+            if (i == argc - 1)
+            {
+                argsValid = false;
+                cerr << "Paramètre non valide pour l'option -u : aucun paramètre" << endl;
+                messageErreur();
+            }
+            else
+            {
+                string nextArg = argv[i + 1];
+                // Vérifier si nextArg est un fichier valide, ou gérer l'option -g
+                if (nextArg[0] == '-') // Si c'est une autre option, afficher une erreur
+                {
+                    argsValid = false;
+                    cerr << "Paramètre attendu pour -u, mais obtenu : " << nextArg  << endl;
+                    messageErreur();
+                }
+                else
+                {
+                    URL_Local = argv[i + 1];
+                    URL_LocalPre = true;
+                }
+            }
         }
         else
         {
@@ -187,4 +221,9 @@ int getHeure(string strHeure)
     return -1;
   }
   return heure;
+}
+
+void messageErreur()
+{
+  cerr << "Paramètres invalide: Usage: ./analog [-g nomfichier.dot] [-e] [-u URL_Local] [-t heure] nomfichier.log" << endl;
 }
