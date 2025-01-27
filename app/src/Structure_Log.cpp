@@ -10,6 +10,8 @@
 
 //---------------------------------------------------------------- INCLUDE
 
+#include "Lectrice.h"
+
 //-------------------------------------------------------- Include système
 using namespace std;
 #include <iostream>
@@ -126,14 +128,14 @@ Structure_Log::~Structure_Log()
 #endif
 } //----- Fin de ~Structure_Log
 
-//Nouveau :
-void Structure_Log::readFile(nomFichier){
+
+void Structure_Log::readFile(string nomFichier){
         Log cur_log;
         Lectrice lectrice = Lectrice(nomFichier);
         while (lectrice.getnextLog()){
-            Log cur_log = Log(getDate(), getTime(), getActionType(),
-                getURLTarget(), getStatus(), getDataSize(),
-                getclearURLReferer(), getIDNavigator());
+            Log cur_log = Log(lectrice.getDate(), lectrice.getTime(), lectrice.getActionType(),
+                lectrice.getURLTarget(), lectrice.getStatus(), lectrice.getDataSize(),
+                lectrice.getclearURLReferer(), lectrice.getIDNavigator());
 
             structLog.NewLog(cur_log);
         }
