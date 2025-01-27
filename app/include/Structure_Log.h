@@ -9,7 +9,7 @@
 //---------- Interface de la classe <Structure_Log> (fichier Structure_Log.h) ----------------
 #if ! defined ( Structure_Log_H )
 #define Structure_Log_H
-#include "Log.h"o
+#include "Log.h"
 #include <string>
 #include <map>
 #include <unordered_map>
