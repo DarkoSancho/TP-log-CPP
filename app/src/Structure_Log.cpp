@@ -18,6 +18,7 @@ using namespace std;
 #include "Structure_Log.h"
 #include <unordered_map>
 #include <vector>
+#include <algorithm>
 
 //------------------------------------------------------------- Constantes
 
