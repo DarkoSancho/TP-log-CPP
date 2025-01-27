@@ -48,17 +48,11 @@ public:
     // Contrat :
     //
 
-    void AfficheTop10();
-    // Mode d'emploi : Affiche le top 10
-    //
-    // Contrat :
-    //
-
     string CreateGraphe();
-    // Mode d'emploi : renvoie un string du graphe répresentant les visites du site
-    //
-    // Contrat : utilisé dans la classe Sortie pour créer le graphe
-    //
+
+    
+       
+    
 
 
 
@@ -89,6 +83,9 @@ public:
     //
     // Contrat :
     //x
+
+    
+
 
 
 

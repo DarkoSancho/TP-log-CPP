@@ -18,6 +18,7 @@ using namespace std;
 #include "Structure_Log.h"
 #include <unordered_map>
 #include <vector>
+#include <algorithm>
 
 //------------------------------------------------------------- Constantes
 
@@ -124,6 +125,59 @@ Structure_Log::~Structure_Log()
     cout << "Appel au destructeur de <Structure_Log>" << endl;
 #endif
 } //----- Fin de ~Structure_Log
+
+//Nouveau :
+void Structure_Log::readFile(nomFichier){
+        Log cur_log;
+        Lectrice lectrice = Lectrice(nomFichier);
+        while (lectrice.getnextLog()){
+            Log cur_log = Log(getDate(), getTime(), getActionType(),
+                getURLTarget(), getStatus(), getDataSize(),
+                getclearURLReferer(), getIDNavigator());
+
+            structLog.NewLog(cur_log);
+        }
+    }
+
+string Structure_Log::CreateGraphe(){
+    // Mode d'emploi : renvoie un string du graphe répresentant les visites du site
+    //
+    // Contrat : utilisé dans la classe Sortie pour créer le graphe
+    //
+    ostringstream dotContent;
+    dotContent << "digraph {\n";
+    unordered_map<string, int> nodeMap;
+    int nodeIndex = 0;
+
+    // Map each node to an index
+    for (const auto& [node, _] : graphe) {
+        if (nodeMap.find(node) == nodeMap.end()) {
+            nodeMap[node] = nodeIndex++;
+        }
+        for (const auto& [neighbor, _] : graphe[node]) {
+            if (nodeMap.find(neighbor) == nodeMap.end()) {
+                nodeMap[neighbor] = nodeIndex++;
+            }
+        }
+    }
+
+    // Add nodes with labels
+    for (const auto& [node, index] : nodeMap) {
+        dotContent << "node" << index << " [label=\"" << node << "\"];\n";
+    }
+
+    // Add edges with labels
+    for (const auto& [node, neighbors] : graphe) {
+        for (const auto& [neighbor, weight] : neighbors) {
+            dotContent << "node" << nodeMap[node] << " -> node" << nodeMap[neighbor] 
+                        << " [label=\"" << weight << "\"];\n";
+        }
+    }
+
+    dotContent << "}";
+    return dotContent.str();
+}
+    
 
 //------------------------------------------------------------------ PRIVE
 
