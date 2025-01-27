@@ -188,15 +188,7 @@ int main(int argc, char** argv)
 
     }
 
-    cout << "exclusion: " << exclusion << endl;
-    cout << "nomLog: " << nomLog << endl;
-    cout << "nomLogPresent: " << nomLogPres << endl;
-    cout << "heurePres: " << heurePresent << endl;
-    cout << "heure: " << heure << endl;
-    cout << "FaireGraph: " << faireGraph << endl;
-    cout << "Graph: " << nomGraphe << endl;
-    cout << "ArgsValid: " << argsValid << endl;
-
+   
     
 
     if (!argsValid || !nomLogPres)
