@@ -14,6 +14,7 @@
 using namespace std;
 #include <string>
 #include <fstream>
+#include <iostream>
 //--------------------------------------------------- Interfaces utilisées
 
 //------------------------------------------------------------- Constantes
