@@ -54,7 +54,7 @@ public:
     // Contrat :
     //
 
-    void readFile(string nomFichier);
+    void readFile(string nomFichier, string nomURL = "http://intranet-if.insa-lyon.fr");
 
     string CreateGraphe();
 
