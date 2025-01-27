@@ -113,36 +113,33 @@ void Structure_Log::readFile(string nomFichier, string nomURL){
     }
 
 string Structure_Log::CreateGraphe(){
-  string res = "test";
-  return res;
-  /*
     // Mode d'emploi : renvoie un string du graphe répresentant les visites du site
     //
     // Contrat : utilisé dans la classe Sortie pour créer le graphe
     //
-    dotstring dotContent;
+    ostringstream dotContent;
     dotContent << "digraph {\n";
     unordered_map<string, int> nodeMap;
     int nodeIndex = 0;
 
-    // Map each node to an index
+    // Attribution de chaque noeud à un indice distinct
     for (const auto& [node, _] : graphe) {
-        if (nodeMap.find(node) == nodeMap.end()) {
+        if (nodeMap.find(node) == nodeMap.end()) { //Le noeud (début de l'arc) est-il présent déjà dans la structure nodeMap?
             nodeMap[node] = nodeIndex++;
         }
-        for (const auto& [neighbor, _] : graphe[node]) {
+        for (const auto& [neighbor, _] : graphe[node]) { //Le noeud (bout de l'arc) est-il présent déjà dans la structure nodeMap?
             if (nodeMap.find(neighbor) == nodeMap.end()) {
                 nodeMap[neighbor] = nodeIndex++;
             }
         }
     }
 
-    // Add nodes with labels
+    // Ajout des noeuds et labels associés à la string
     for (const auto& [node, index] : nodeMap) {
         dotContent << "node" << index << " [label=\"" << node << "\"];\n";
     }
 
-    // Add edges with labels
+    // Ajout des arcs et poids associés à la string
     for (const auto& [node, neighbors] : graphe) {
         for (const auto& [neighbor, weight] : neighbors) {
             dotContent << "node" << nodeMap[node] << " -> node" << nodeMap[neighbor]
@@ -152,7 +149,6 @@ string Structure_Log::CreateGraphe(){
 
     dotContent << "}";
     return dotContent.str();
-    */
 
 }
 
