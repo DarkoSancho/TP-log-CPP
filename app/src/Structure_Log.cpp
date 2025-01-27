@@ -51,7 +51,7 @@ void Structure_Log::AfficheTop10()
         UpdateTop10();
         cout << "Classement des 10 sites les plus visités:\n";
         for (const auto& [nbvisites, site] : top10) {
-            cout << "  " << site << " : " << nbvisites << "\n";
+            cout << "  " << site << " : " << nbvisites << "(hits)\n";
         }
     }
 
