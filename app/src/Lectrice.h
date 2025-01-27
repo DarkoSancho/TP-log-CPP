@@ -22,7 +22,6 @@ const string FileName ="Fichier.log";
 
 const char SEPLOG = '\n'; // Char qui sépare 2 logs
 
-const string localURL= "http://intranet-if.insa-lyon.fr";
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
@@ -106,7 +105,7 @@ public:
 
 //-------------------------------------------- Constructeurs - destructeur
 
-    Lectrice();
+    Lectrice(string fileName, string LocalUrl="http://intranet-if.insa-lyon.fr");
     //Mode d'emploi :
     //COnstructeur à partir d'un fichier .log
 
@@ -124,6 +123,7 @@ protected:
 //----------------------------------------------------- Attributs protégés
     ifstream file;
     string currentLog; //Log sur lequel nous sommes placé pour le parcours du .log
+    string localURL;
 };
 
 
