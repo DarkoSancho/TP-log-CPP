@@ -52,8 +52,17 @@ void Structure_Log::UpdateTop10()
 {
 }
 
-void Structure_Log::CreateGraphe()
-{
+string Structure_Log::CreateGraphe()
+{   
+    string res;
+    for (const auto& [source, destinations] : graphe) {
+        res += "  " + source + " :\n";
+        for (const auto& [destination, poids] : destinations) {
+            res +=  "    -> " + destination + " : " + "\n";
+        }
+    }
+    return res;
+
 }
 
 //------------------------------------------------- Surcharge d'opérateurs

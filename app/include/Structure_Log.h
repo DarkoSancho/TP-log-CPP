@@ -48,7 +48,11 @@ public:
     // Contrat :
     //
 
-    void CreateGraphe();
+    string CreateGraphe();
+    // Mode d'emploi : renvoie un string du graphe répresentant les visites du site
+    //
+    // Contrat : utilisé dans la classe Sortie pour créer le graphe
+    //
 
 
 
