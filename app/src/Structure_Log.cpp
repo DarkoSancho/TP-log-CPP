@@ -130,14 +130,13 @@ Structure_Log::~Structure_Log()
 
 
 void Structure_Log::readFile(string nomFichier){
-        Log cur_log;
         Lectrice lectrice = Lectrice(nomFichier);
         while (lectrice.getnextLog()){
             Log cur_log = Log(lectrice.getDate(), lectrice.getTime(), lectrice.getActionType(),
                 lectrice.getURLTarget(), lectrice.getStatus(), lectrice.getDataSize(),
                 lectrice.getclearURLReferer(), lectrice.getIDNavigator());
 
-            structLog.NewLog(cur_log);
+            NewLog(cur_log);
         }
     }
 
