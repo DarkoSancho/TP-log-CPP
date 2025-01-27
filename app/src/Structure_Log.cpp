@@ -103,9 +103,9 @@ void Structure_Log::UpdateTop10()
 
 void Structure_Log::readFile(string nomFichier, string nomURL){
         Lectrice lectrice(nomFichier, nomURL);
-        
+       
         while (lectrice.getnextLog()){
-            
+           
             Log cur_log(lectrice.getDate(), lectrice.getTime(), lectrice.getActionType(),
                 lectrice.getURLTarget(), lectrice.getStatus(), lectrice.getDataSize(),
                 lectrice.getclearURLReferer(), lectrice.getIDNavigator());
