@@ -139,12 +139,7 @@ int Lectrice::getStatus(){
     string str3 = str2.substr(1);
     int posespace =str3.find(" ");
     string sstatus=str3.substr(0,posespace);
-    cout<<"OK";
-    if (!stoi(sstatus)){
-        cout<<currentLog<<endl;
-    }
-
-    int status = stoi(sstatus);
+    int status = stoi(sstatus); //Convertit le string en enter
     return status;
 }
 
@@ -158,14 +153,8 @@ int Lectrice::getDataSize(){
     string str3 = str2.substr(1);
     int posespace =str3.find(" ");
     string ssize=str3.substr(posespace);
-    if (ssize == '-'){
-        return -1
-    }
-    else{
-        size = stoi(ssize)
-        cout<<currentLog<<endl;
-        return size;
-    }
+    int size = stoi(ssize); //Convertit le string en enter
+    return size;
 }
 
 string Lectrice::getIDNavigator(){

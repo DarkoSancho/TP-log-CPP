@@ -237,7 +237,7 @@ int main(int argc, char** argv)
 
 int getHeure(string strHeure)
 {
-  for( int i = 0 ; i < strHeure.size() ; i++)
+  for( long unsigned int i = 0 ; i < strHeure.size() ; i++)
     {
   	if( !isdigit( strHeure[i] ) )
     {
