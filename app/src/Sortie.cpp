@@ -47,9 +47,9 @@ cout << "Appel de la méthode EcritGraphe de <Sortie>" << endl;
         return statutFlux::ERREUR_OUVERTURE; // Retourne une erreur si l'ouverture échoue
     }
 
-    flux << "diagram { \n";
+    
     flux << struct_log->CreateGraphe();
-    flux << "}";
+    
 
     if (!flux) // Vérifie si l'écriture a échoué
     {

@@ -16,12 +16,14 @@
 using namespace std;
 #include <iostream>
 #include <string>
-
-//------------------------------------------------------ Include personnel
-#include "Structure_Log.h"
 #include <unordered_map>
 #include <vector>
 #include <algorithm>
+#include <sstream>
+
+//------------------------------------------------------ Include personnel
+#include "Structure_Log.h"
+
 
 //------------------------------------------------------------- Constantes
 

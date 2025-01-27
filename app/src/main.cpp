@@ -100,7 +100,7 @@ int main(int argc, char** argv)
             }
             else
             {
-                string nextArg = argv[i + 1];
+                string nextArg = argv[++i ];
                 // Vérifier si nextArg est un fichier valide, ou gérer l'option -g
                 if (nextArg[0] == '-') // Si c'est une autre option, afficher une erreur
                 {
@@ -110,7 +110,7 @@ int main(int argc, char** argv)
                 }
                 else
                 {
-                    nomGraphe = argv[i + 1];
+                    nomGraphe = argv[i ];
                     faireGraph = true;
                 }
             }
@@ -129,7 +129,7 @@ int main(int argc, char** argv)
             }
             else
             {
-                string nextArg = argv[i + 1];
+                string nextArg = argv[++i ];
                 // Vérifier si nextArg est un fichier valide, ou gérer l'option -t
                 if (nextArg[0] == '-') // Si c'est une autre option, afficher une erreur
                 {
@@ -165,7 +165,7 @@ int main(int argc, char** argv)
             }
             else
             {
-                string nextArg = argv[i + 1];
+                string nextArg = argv[++i ];
                 // Vérifier si nextArg est un fichier valide, ou gérer l'option -g
                 if (nextArg[0] == '-') // Si c'est une autre option, afficher une erreur
                 {
@@ -175,7 +175,7 @@ int main(int argc, char** argv)
                 }
                 else
                 {
-                    URL_Local = argv[i + 1];
+                    URL_Local = argv[i ];
                     URL_LocalPre = true;
                 }
             }
@@ -187,6 +187,15 @@ int main(int argc, char** argv)
         }
 
     }
+
+    cout << "exclusion: " << exclusion << endl;
+    cout << "nomLog: " << nomLog << endl;
+    cout << "nomLogPresent: " << nomLogPres << endl;
+    cout << "heurePres: " << heurePresent << endl;
+    cout << "heure: " << heure << endl;
+    cout << "FaireGraph: " << faireGraph << endl;
+    cout << "Graph: " << nomGraphe << endl;
+    cout << "ArgsValid: " << argsValid << endl;
 
     
 
