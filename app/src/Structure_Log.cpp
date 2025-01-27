@@ -153,11 +153,6 @@ string Structure_Log::CreateGraphe(){
 
 }
 
-//------------------------------------------------- Surcharge d'opérateurs
-
-Structure_Log &Structure_Log::operator=(const Structure_Log &unStructure_Log)
-{
-}
 
 //-------------------------------------------- Constructeurs - destructeur
 Structure_Log::Structure_Log(const Structure_Log &unStructure_Log)
