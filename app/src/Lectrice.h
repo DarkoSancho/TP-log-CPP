@@ -12,7 +12,6 @@
 #define LECTRICE_H
 
 using namespace std;
-#include <iostream>
 #include <string>
 #include <fstream>
 //--------------------------------------------------- Interfaces utilisées
