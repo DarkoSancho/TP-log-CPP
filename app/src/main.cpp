@@ -52,3 +52,137 @@ int main() {
 }
 
 //Chemin : /home/jguedira/INSA_3A/C++/TP-log-CPP_v1
+
+
+
+int main(int argc, char** argv)
+{
+    bool argsValid = true;
+
+    bool faireGraph = false;
+    string nomGraphe;
+
+    bool nomLogPres = false;
+    string nomLog;
+
+    bool exclusion = false;
+
+    bool heurePresent;
+    int heure;
+
+    // Parcourir les arguments
+    for (int i = 1; i < argc && argsValid; i++) // i=0 est le nom de la méthode
+    {
+        string argCurrent = argv[i];
+
+        if (argCurrent.empty())
+        {
+            argsValid = false;
+        }
+
+        if (argCurrent == "-g")
+        {
+            if (i == argc - 1)
+            {
+                argsValid = false;
+                cerr << "Paramètre non valide pour l'option -g : aucun paramètre, Usage: ./analog [-g nomfichier.dot] [-e] [-t heure] nomfichier.log " << endl;
+            }
+            else
+            {
+                string nextArg = argv[i + 1];
+                // Vérifier si nextArg est un fichier valide, ou gérer l'option -g
+                if (nextArg[0] == '-') // Si c'est une autre option, afficher une erreur
+                {
+                    argsValid = false;
+                    cerr << "Paramètre attendu pour -g, mais obtenu : " << nextArg << "  Usage: ./analog [-g nomfichier.dot] [-e] [-t heure] nomfichier.log" << endl;
+                }
+                else
+                {
+                    nomGraphe = argv[i + 1];
+                    faireGraph = true;
+                }
+            }
+        }
+        else if (argCurrent == "-e")
+        {
+          exclusion = true;
+        }
+        else if (argCurrent == "-t")
+        {
+            if (i == argc - 1)
+            {
+                argsValid = false;
+                cerr << "Paramètre non valide pour l'option -t : aucun paramètre, Usage: ./analog [-g nomfichier.dot] [-e] [-t heure] nomfichier.log " << endl;
+            }
+            else
+            {
+                string nextArg = argv[i + 1];
+                // Vérifier si nextArg est un fichier valide, ou gérer l'option -t
+                if (nextArg[0] == '-') // Si c'est une autre option, afficher une erreur
+                {
+                    argsValid = false;
+                    cerr << "Paramètre attendu pour -t, mais obtenu : " << nextArg << "  ,Usage: ./analog [-g nomfichier.dot] [-e] [-t heure] nomfichier.log" << endl;
+                }
+                else if (getHeure(nextArg) == -1)
+                {
+                  argsValid = false;
+                  cerr << "Paramètre attendu pour -t, mais obtenu : " << nextArg << "n'est pas valide (compris entre 0 et 23 ou n'est pas un nombre),  Usage: ./analog [-g nomfichier.dot] [-e] [-t heure] nomfichier.log" << endl;
+                }
+                else
+                {
+                  heurePresent = true;
+                  heure = getHeure(nextArg);
+                }
+            }
+        }
+        else if (argCurrent.size()>4 && argCurrent.substr(argCurrent.size() - 4) == ".log")
+        {
+          nomLogPres = true;
+          nomLog = argCurrent;
+        }
+        else
+        {
+          cerr << "Paramètre "<< argCurrent <<" non reconnu " << endl;
+          argsValid = false; 
+        }
+
+    }
+
+    cout << "exclusion: " << exclusion << endl;
+    cout << "nomLog: " << nomLog << endl;
+    cout << "nomLogPresent: " << nomLogPres << endl;
+    cout << "heurePres: " << heurePresent << endl;
+    cout << "heure: " << heure << endl;
+    cout << "FaireGraph: " << faireGraph << endl;
+    cout << "Graph: " << nomGraphe << endl;
+    cout << "ArgsValid: " << argsValid << endl;
+
+    if (!argsValid || !nomLogPres)
+    {
+      cerr << "Paramètres invalide: Usage: ./analog [-g nomfichier.dot] [-e] [-t heure] nomfichier.log" << endl;
+    }
+    
+}
+
+          
+
+//echo "Usage: ./analog [-g nomfichier.dot] [-e] [-t heure] nomfichier.log  "
+// rajouter des options ??
+
+int getHeure(string strHeure)
+{
+  for( int i = 0 ; i < strHeure.size() ; i++)
+    {
+  	if( !isdigit( strHeure[i] ) )
+    {
+      return -1;
+    }
+  }
+
+  int heure = stoi ( strHeure ) ;
+  if( heure < 0 or heure > 23 ) 
+  {
+    return -1;
+  }
+  return heure;
+}
