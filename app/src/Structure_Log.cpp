@@ -15,6 +15,7 @@
 //-------------------------------------------------------- Include système
 using namespace std;
 #include <iostream>
+#include <string>
 
 //------------------------------------------------------ Include personnel
 #include "Structure_Log.h"
@@ -83,16 +84,72 @@ void Structure_Log::UpdateTop10()
     }
 }
 
-string Structure_Log::CreateGraphe()
-{   
-    string res;
-    for (const auto& [source, destinations] : graphe) {
-        res += "  " + source + " :\n";
-        for (const auto& [destination, poids] : destinations) {
-            res +=  "    -> " + destination + " : " + "\n";
+
+// string Structure_Log::CreateGraphe()
+// {   
+//     string res;
+//     for (const auto& [source, destinations] : graphe) {
+//         res += "  " + source + " :\n";
+//         for (const auto& [destination, poids] : destinations) {
+//             res +=  "    -> " + destination + " : " + "\n";
+//         }
+//     }
+//     return res;
+
+// }
+
+void Structure_Log::readFile(string nomFichier, string nomURL){
+        Lectrice lectrice(nomFichier, nomURL);
+        while (lectrice.getnextLog()){
+            Log cur_log(lectrice.getDate(), lectrice.getTime(), lectrice.getActionType(),
+                lectrice.getURLTarget(), lectrice.getStatus(), lectrice.getDataSize(),
+                lectrice.getclearURLReferer(), lectrice.getIDNavigator());
+
+            NewLog(cur_log);
         }
     }
-    return res;
+
+string Structure_Log::CreateGraphe(){
+  string res = "test";
+  return res;
+  /*
+    // Mode d'emploi : renvoie un string du graphe répresentant les visites du site
+    //
+    // Contrat : utilisé dans la classe Sortie pour créer le graphe
+    //
+    dotstring dotContent;
+    dotContent << "digraph {\n";
+    unordered_map<string, int> nodeMap;
+    int nodeIndex = 0;
+
+    // Map each node to an index
+    for (const auto& [node, _] : graphe) {
+        if (nodeMap.find(node) == nodeMap.end()) {
+            nodeMap[node] = nodeIndex++;
+        }
+        for (const auto& [neighbor, _] : graphe[node]) {
+            if (nodeMap.find(neighbor) == nodeMap.end()) {
+                nodeMap[neighbor] = nodeIndex++;
+            }
+        }
+    }
+
+    // Add nodes with labels
+    for (const auto& [node, index] : nodeMap) {
+        dotContent << "node" << index << " [label=\"" << node << "\"];\n";
+    }
+
+    // Add edges with labels
+    for (const auto& [node, neighbors] : graphe) {
+        for (const auto& [neighbor, weight] : neighbors) {
+            dotContent << "node" << nodeMap[node] << " -> node" << nodeMap[neighbor]
+                        << " [label=\"" << weight << "\"];\n";
+        }
+    }
+
+    dotContent << "}";
+    return dotContent.str();
+    */
 
 }
 
@@ -129,56 +186,7 @@ Structure_Log::~Structure_Log()
 } //----- Fin de ~Structure_Log
 
 
-void Structure_Log::readFile(string nomFichier, string nomURL){
-        Log cur_log;
-        Lectrice lectrice = Lectrice(nomFichier, nomURL);
-        while (lectrice.getnextLog()){
-            Log cur_log = Log(lectrice.getDate(), lectrice.getTime(), lectrice.getActionType(),
-                lectrice.getURLTarget(), lectrice.getStatus(), lectrice.getDataSize(),
-                lectrice.getclearURLReferer(), lectrice.getIDNavigator());
 
-            NewLog(cur_log);
-        }
-    }
-
-string Structure_Log::CreateGraphe(){
-    // Mode d'emploi : renvoie un string du graphe répresentant les visites du site
-    //
-    // Contrat : utilisé dans la classe Sortie pour créer le graphe
-    //
-    ostringstream dotContent;
-    dotContent << "digraph {\n";
-    unordered_map<string, int> nodeMap;
-    int nodeIndex = 0;
-
-    // Map each node to an index
-    for (const auto& [node, _] : graphe) {
-        if (nodeMap.find(node) == nodeMap.end()) {
-            nodeMap[node] = nodeIndex++;
-        }
-        for (const auto& [neighbor, _] : graphe[node]) {
-            if (nodeMap.find(neighbor) == nodeMap.end()) {
-                nodeMap[neighbor] = nodeIndex++;
-            }
-        }
-    }
-
-    // Add nodes with labels
-    for (const auto& [node, index] : nodeMap) {
-        dotContent << "node" << index << " [label=\"" << node << "\"];\n";
-    }
-
-    // Add edges with labels
-    for (const auto& [node, neighbors] : graphe) {
-        for (const auto& [neighbor, weight] : neighbors) {
-            dotContent << "node" << nodeMap[node] << " -> node" << nodeMap[neighbor] 
-                        << " [label=\"" << weight << "\"];\n";
-        }
-    }
-
-    dotContent << "}";
-    return dotContent.str();
-}
     
 
 //------------------------------------------------------------------ PRIVE
