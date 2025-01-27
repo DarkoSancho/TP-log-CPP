@@ -12,9 +12,9 @@
 #define LECTRICE_H
 
 using namespace std;
-#include <iostream>
 #include <string>
 #include <fstream>
+#include <iostream>
 //--------------------------------------------------- Interfaces utilisées
 
 //------------------------------------------------------------- Constantes
@@ -22,7 +22,6 @@ const string FileName ="Fichier.log";
 
 const char SEPLOG = '\n'; // Char qui sépare 2 logs
 
-const string localURL= "http://intranet-if.insa-lyon.fr";
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
@@ -53,12 +52,24 @@ public:
     // Contrat :
     //
 
-    string getTime();
+    string getTimeDate();
     // Mode d'emploi :
-    //Donne l'heure de l'émition (D/M/Y:h:mn:s delta GMT)
     // Contrat :
     //
 
+    string getDate();
+    // Mode d'emploi :
+    //Donne la date de l'émition (D/M/Y) 
+    // Contrat :
+    //
+
+    int getFuseau();
+    
+    int getTime();
+    // Mode d'emploi :
+    //Donne l'heure de l'émition en seconde au fuseau GMT
+    // Contrat :
+    //
     string getURLTarget();
     // Mode d'emploi :
     //Donne l'URL nettoyée 
@@ -83,12 +94,18 @@ public:
     //Donne le type d'action
     // Contrat :
     //
+
+    int getStatus();
+
+    int getDataSize();
+
+    string getIDNavigator();
 //------------------------------------------------- Surcharge d'opérateurs
 
 
 //-------------------------------------------- Constructeurs - destructeur
 
-    Lectrice();
+    Lectrice(string fileName, string LocalUrl="http://intranet-if.insa-lyon.fr");
     //Mode d'emploi :
     //COnstructeur à partir d'un fichier .log
 
@@ -106,6 +123,7 @@ protected:
 //----------------------------------------------------- Attributs protégés
     ifstream file;
     string currentLog; //Log sur lequel nous sommes placé pour le parcours du .log
+    string localURL;
 };
 
 

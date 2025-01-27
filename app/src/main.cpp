@@ -42,14 +42,14 @@ int test_logs() {
 
 int test_lectrice(){
 
-    Lectrice L;
+    Lectrice L("Fichier.log");
     cout<<L.getclearURLReferer()<<endl;
 }
 
-int main() {
-  test_lectrice();
-  return 0;
-}
+// int main() {
+//   test_lectrice();
+//   return 0;
+// }
 
 //Chemin : /home/jguedira/INSA_3A/C++/TP-log-CPP_v1
 
