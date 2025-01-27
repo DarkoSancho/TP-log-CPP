@@ -35,6 +35,9 @@ int test_logs() {
     structureLog.NewLog(log3);
     structureLog.NewLog(log4);
 
+    structureLog.UpdateTop10();
+    structureLog.AfficheTop10();
+
     cout << "Affichage de structLog" << endl;
     structureLog.Affiche();
 
