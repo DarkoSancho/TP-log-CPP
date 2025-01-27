@@ -40,6 +40,14 @@ void Structure_Log::Affiche() const {
         }
     }
 
+void Structure_Log::AfficheTop10()  
+    {
+        cout << "Classement des 10 sites les plus visités:\n";
+        for (const auto& [nbvisites, site] : top10) {
+            cout << "  " << site << " : " << nbvisites << "\n";
+        }
+    }
+
 void Structure_Log::NewLog(Log & unLog)
 {
     if ( (heure_creneau == -1 || unLog.getHeure() == heure_creneau)){ //Rajouter && condition_extension pour check la validité de l'extension
