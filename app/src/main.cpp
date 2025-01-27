@@ -193,7 +193,7 @@ int main(int argc, char** argv)
     if (!argsValid || !nomLogPres)
     {
       cerr << "Paramètres invalide: Usage: ./analog [-g nomfichier.dot] [-e] [-t heure] nomfichier.log" << endl;
-      return;
+      return 0;
     }
 
   Structure_Log * log_SD;
