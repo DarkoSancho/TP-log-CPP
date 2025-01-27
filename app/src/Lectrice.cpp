@@ -139,9 +139,8 @@ int Lectrice::getStatus(){
     string str3 = str2.substr(1);
     int posespace =str3.find(" ");
     string sstatus=str3.substr(0,posespace);
-    cout<<"OK";
     if (!stoi(sstatus)){
-        cout<<currentLog<<endl;
+        return -1;
     }
 
     int status = stoi(sstatus);
@@ -149,21 +148,20 @@ int Lectrice::getStatus(){
 }
 
 int Lectrice::getDataSize(){
-    int pos1, pos2, pos3; //Occurence des i_éme '"'    
+    int pos1, pos2, pos3,pos4; //Occurence des i_éme '"'    
     pos1 = currentLog.find('"');   
     string str1 = currentLog.substr(pos1+1);
     pos2 = str1.find('"');
     string str2 = str1.substr(pos2+1);
-    pos3= str2.find('"');
-    string str3 = str2.substr(1);
-    int posespace =str3.find(" ");
-    string ssize=str3.substr(posespace);
-    if (ssize == '-'){
-        return -1
+    int posespace =str2.find(" ");
+    string ssize1=str2.substr(posespace);
+    pos4 = ssize1.find('"');
+    string ssize = ssize1.substr(0,ssize1.length()-ssize1.find('"')-1);
+    if (ssize1 == "-"){
+        return -1;
     }
     else{
-        size = stoi(ssize)
-        cout<<currentLog<<endl;
+        int size = stoi(ssize);
         return size;
     }
 }
