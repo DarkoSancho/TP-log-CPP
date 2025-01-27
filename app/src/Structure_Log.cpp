@@ -50,8 +50,14 @@ void Structure_Log::AfficheTop10()
     {
         UpdateTop10();
         cout << "Classement des 10 sites les plus visités:\n";
-        for (const auto& [nbvisites, site] : top10) {
-            cout << "  " << site << " : " << nbvisites << "(hits)\n";
+       // Copier le top10 dans un vecteur pour le manipuler
+        std::vector<std::pair<int, std::string>> reversedTop10(top10.begin(), top10.end());
+        
+        // Inverser l'ordre
+        std::reverse(reversedTop10.begin(), reversedTop10.end());
+        
+        for (const auto& [nbvisites, site] : reversedTop10) {
+            cout << "  " << site << " : " << nbvisites << "\n";
         }
     }
 
