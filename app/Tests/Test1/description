@@ -1,1 +1,2 @@
-Ce test permet de vérifier la production d'un fichier en sortie du programme testé
+Ce test permet de s'assurer du bon fonctionnement du top 10, donc de la méthode UpdateTop10() 
+et AfficherTop10().
