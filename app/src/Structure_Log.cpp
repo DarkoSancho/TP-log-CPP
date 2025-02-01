@@ -63,9 +63,7 @@ void Structure_Log::AfficheTop10()
 
 void Structure_Log::NewLog(Log & unLog)
 {   
-    cout<<"unLog.getUrlCible()"<<endl;
-    if ( (heure_creneau == -1 || unLog.getHeure() == heure_creneau)&&(exclusionExtensions==false || getExtension(unLog.getUrlCible())=="NONE" ||  getExtension(unLog.getUrlCible()) !="jpeg"|| getExtension(unLog.getUrlCible()) !="jpg"|| getExtension(unLog.getUrlCible()) !="gif"|| getExtension(unLog.getUrlCible()) !="js"|| getExtension(unLog.getUrlCible()) !="css")){ 
-      // Pas de cascade de suppression car ces fichiers sont en queues de recherche
+    if (((heure_creneau == -1) || (unLog.getHeure() == heure_creneau))&&((exclusionExtensions==false) || (getExtension(unLog.getUrlCible())=="NONE") ||  (getExtension(unLog.getUrlCible()) !="jpeg" && getExtension(unLog.getUrlCible()) !="jpg"&& getExtension(unLog.getUrlCible()) !="gif"&& getExtension(unLog.getUrlCible()) !="js"&& getExtension(unLog.getUrlCible()) !="css"))){ 
       cout<<"unLog.getUrlCible()"<<endl;
       dico_visites[unLog.getUrlCible()] += 1;
       graphe[unLog.getReferer()][unLog.getUrlCible()] += 1;
@@ -176,6 +174,7 @@ Structure_Log::Structure_Log(bool graphe, bool exclusions, int heure)
 #ifdef MAP
     cout << "Appel au constructeur de <Structure_Log>" << endl;
 #endif
+
     heure_creneau = heure;
     makeGraphe = graphe;
     exclusionExtensions = exclusions;

@@ -67,7 +67,7 @@ int main(int argc, char** argv)
     bool exclusion = false;
 
     bool heurePresent;
-    int heure;
+    int heure=-1;
 
     // Parcourir les arguments
     for (int i = 1; i < argc && argsValid; i++) // i=0 est le nom de la méthode
