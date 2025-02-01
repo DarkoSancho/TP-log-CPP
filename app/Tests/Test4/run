@@ -1,2 +1,2 @@
-./analog [-14 heure] [-g Fichier.dot] Fichier.log
+../../analog -t 12 -g Fichier.dot Fichier.log
    
