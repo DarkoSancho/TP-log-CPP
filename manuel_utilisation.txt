@@ -22,7 +22,7 @@ Options :
 
   -u url
     Modifie l'URL locale utilisée par le programme.
-    Exemple : "-u http://localhost:8080" configure l'URL à "http://localhost:8080".
+    Exemple : "-u https://www.google.com" configure l'URL à "http://localhost:8080".
 
 Exemple d'utilisation combinée :
-  ./analog -g graphe.dot -e -t 9 -u http://localhost:3000 access.log
+  ./analog -g graphe.dot -e -t 9 -u https://www.google.com access.log
