@@ -56,10 +56,10 @@ void Structure_Log::AfficheTop10()
         // Inverser l'ordre
         std::reverse(reversedTop10.begin(), reversedTop10.end());
 
-        int count = 0;
+        int count = 1;
         
         for (const auto& [nbvisites, site] : reversedTop10) {
-            cout << count++ << "  " << site << " : " << nbvisites << " (hits) \n";
+            cout << count++ << "  " << site << " : " << nbvisites << " hits \n";
         }
     }
 
