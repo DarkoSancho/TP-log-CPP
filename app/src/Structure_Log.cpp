@@ -55,9 +55,11 @@ void Structure_Log::AfficheTop10()
         
         // Inverser l'ordre
         std::reverse(reversedTop10.begin(), reversedTop10.end());
+
+        int count = 0;
         
         for (const auto& [nbvisites, site] : reversedTop10) {
-            cout << "  " << site << " : " << nbvisites << " (hits) \n";
+            cout << count++ << "  " << site << " : " << nbvisites << " (hits) \n";
         }
     }
 
@@ -80,9 +82,14 @@ void Structure_Log::UpdateTop10()
     for (const auto& entry : dico_visites) {
         sorted_visits.push_back({entry.second, entry.first});
     }
-    
-    // Sort the vector based on visit count (descending order)
-    sort(sorted_visits.rbegin(), sorted_visits.rend());
+
+    // Sort the vector using a lambda function for multi-criteria sorting
+    sort(sorted_visits.begin(), sorted_visits.end(), [](const pair<int, string>& a, const pair<int, string>& b) {
+        if (a.first != b.first) {
+            return a.first > b.first;  // Sort by visit count in descending order
+        }
+        return a.second < b.second;   // Sort alphabetically by URL if visit counts are equal
+    });
 
     // Insert the top 10 into the multimap
     int count = 0;
@@ -92,6 +99,7 @@ void Structure_Log::UpdateTop10()
         count++;
     }
 }
+
 
 
 // string Structure_Log::CreateGraphe()
