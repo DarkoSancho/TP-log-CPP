@@ -62,10 +62,12 @@ void Structure_Log::AfficheTop10()
     }
 
 void Structure_Log::NewLog(Log & unLog)
-{
-    if ( (heure_creneau == -1 || unLog.getHeure() == heure_creneau)){ //Rajouter && condition_extension pour check la validité de l'extension
+{   
+    cout<<unLog.getUrlCible()<<endl;
+    cout<<getExtension(unLog.getUrlCible())<<endl;
+    if ( (heure_creneau == -1 || unLog.getHeure() == heure_creneau)&&(exclusionExtensions==false || getExtension(unLog.getUrlCible())=="NONE" ||  getExtension(unLog.getUrlCible()) !="jpeg"|| getExtension(unLog.getUrlCible()) !="jpg"|| getExtension(unLog.getUrlCible()) !="gif"|| getExtension(unLog.getUrlCible()) !="js"|| getExtension(unLog.getUrlCible()) !="css")){ 
+      // Pas de cascade de suppression car ces fichiers sont en queues de recherche
       dico_visites[unLog.getUrlCible()] += 1;
-      //if (makeGraphe) //A eventuellement insérer avant la ligne qui suit
       graphe[unLog.getReferer()][unLog.getUrlCible()] += 1;
     }
 }
@@ -195,3 +197,14 @@ Structure_Log::~Structure_Log()
 //------------------------------------------------------------------ PRIVE
 
 //----------------------------------------------------- Méthodes protégées
+
+
+string Structure_Log::getExtension(string URL) {
+    size_t pos = URL.rfind('.');
+
+    if (pos == string::npos || pos == 0) {
+        return "NONE";
+    }
+
+    return URL.substr(pos+1);  
+}

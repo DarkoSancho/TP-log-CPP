@@ -104,6 +104,9 @@ public:
 protected:
 //----------------------------------------------------- Méthodes protégées
 
+string getExtension(string URL);
+
+
 
 //----------------------------------------------------- Attributs protégés
 

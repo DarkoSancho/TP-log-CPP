@@ -91,7 +91,7 @@ string Lectrice::getURLTarget(){
     string str1 = currentLog.substr(posURL);
     int posd = str1.find('/');
     string str2 = str1.substr(posd);
-    int posf= str2.find('"');
+    int posf= str2.find(' ');
     return str2.substr(0,posf);
 }
 
