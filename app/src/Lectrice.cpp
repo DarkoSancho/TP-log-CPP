@@ -76,13 +76,11 @@ int Lectrice::getTime(){
     string stime= str2.substr(0,8);
     
     string sheure=stime.substr(0,2);
-    
     string sminute=stime.substr(3,2);
-    
     string sseconde=stime.substr(6,2);
     
     int fuseau = getFuseau();
-    return 3600*(stoi(sheure)-fuseau)+60*stoi(sminute)+stoi(sseconde);
+    return stoi(sheure)+2-fuseau;
 }
 
 string Lectrice::getURLTarget(){
