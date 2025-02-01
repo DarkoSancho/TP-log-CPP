@@ -1,1 +1,1 @@
-Essai de test de recopie d'un fichier sur l'erreur standard
+Ce test permet de fusionner les options -t et -e, pour garder que les logs d'une certaine heure et exclure des types d'extension
