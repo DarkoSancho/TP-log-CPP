@@ -1,2 +1,1 @@
-./analog -e Fichier.log
-   
+../../analog -e Fichier.log
