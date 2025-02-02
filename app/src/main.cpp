@@ -69,6 +69,7 @@ int main(int argc, char** argv)
     bool heurePresent;
     int heure=-1;
 
+
     // Parcourir les arguments
     for (int i = 1; i < argc && argsValid; i++) // i=0 est le nom de la méthode
     {
@@ -129,8 +130,8 @@ int main(int argc, char** argv)
                 else if (getHeure(nextArg) == -1)
                 {
                   argsValid = false;
-                  cerr << "Paramètre attendu pour -t, mais obtenu : " << nextArg << "n'est pas valide (compris entre 0 et 23 ou n'est pas un nombre)g" << endl;
-                  messageErreur();
+                  cerr << "Heure renseignée au mauvais format : " << nextArg << "\r\nVeuillez fournir une heure entre 0 et 23." << endl;
+                  return 0;
                 }
                 else
                 {
