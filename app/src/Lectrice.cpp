@@ -79,7 +79,7 @@ int Lectrice::getTime(){
     string sminute=stime.substr(3,2);
     string sseconde=stime.substr(6,2);
     
-    int fuseau = getFuseau();
+    float fuseau = getFuseau();
     return stoi(sheure)+2-fuseau;
 }
 

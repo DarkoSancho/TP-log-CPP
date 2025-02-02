@@ -1,0 +1,28 @@
+Manuel d'utilisation
+
+Usage : 
+  ./analog [options] nomfichier.log
+
+Description :
+  Par défaut, sans option, le programme affiche à la console,
+  la liste des 10 documents les plus consultés par ordre décroissant de popularité.
+  Aucun fichier ".dot" n'est généré dans ce cas.
+
+Options :
+  -g nomfichier.dot
+    Génère un fichier au format GraphViz du graphe analysé.
+    Chaque document est représenté par un nœud et chaque arc indique le nombre de parcours associés.
+
+  -e
+    Exclut tous les documents ayant une extension de type image, css ou javascript.
+
+  -t heure
+    Ne prend en compte que les hits se situant dans le créneau horaire [heure, heure+1[.
+    Exemple : "-t 14" ne considérera que les hits entre 14h00 et 14h59.
+
+  -u url
+    Modifie l'URL locale utilisée par le programme.
+    Exemple : "-u https://www.google.com" configure l'URL à "http://localhost:8080".
+
+Exemple d'utilisation combinée :
+  ./analog -g graphe.dot -e -t 9 -u https://www.google.com access.log
