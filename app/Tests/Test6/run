@@ -1,1 +1,1 @@
-../../analog -g Fichier.dot -u http://site-ecole.fr Fichier.log
+../../analog -g Fichier.dot -u http://site-ecole.fr fichier.log
