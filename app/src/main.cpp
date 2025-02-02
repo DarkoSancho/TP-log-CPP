@@ -11,45 +11,6 @@ using namespace std;
 int getHeure(string );
 void messageErreur();
 
-int test_logs() {
-    // Crée objets Log
-    Log log1("2025-01-23", 14, "GET", "/home", 200, 1024, "http://example.com", "Mozilla/5.0");
-    Log log2("2025-01-23", 16, "GET", "/home", 200, 1024, "http://example2.com", "Mozilla/5.0");
-    Log log3("2025-01-23", 16, "GET", "/home", 200, 1024, "http://example.com", "Mozilla/5.0");
-    Log log4("2025-01-23", 14, "GET", "/http://example2.com", 200, 1024, "http://example.com", "Mozilla/5.0");
-
-    // Affiche les informations du log
-    cout << "Date: " << log1.getDate() << endl;
-    cout << "Heure: " << log1.getHeure() << endl;
-    cout << "Type d'action: " << log1.getTypeAction() << endl;
-    cout << "URL cible: " << log1.getUrlCible() << endl;
-    cout << "Statut: " << log1.getStatus() << endl;
-    cout << "Taille de la réponse: " << log1.getTailleReponse() << " octets" << endl;
-    cout << "Referer: " << log1.getReferer() << endl;
-    cout << "Navigateur: " << log1.getIdNavigateur() << endl;
-
-    // Crée une instance de Structure_Log et ajoute le log
-    cout << "Création de structureLog et ajouts des logs" << endl;
-    Structure_Log structureLog; //mettre structureLog(16) pour une heure spécifique
-    structureLog.NewLog(log1);
-    structureLog.NewLog(log2);
-    structureLog.NewLog(log3);
-    structureLog.NewLog(log4);
-
-    structureLog.UpdateTop10();
-    structureLog.AfficheTop10();
-
-    cout << "Affichage de structLog" << endl;
-    structureLog.Affiche();
-
-
-
-    return 0;
-}
-
-
-
-
 
 int main(int argc, char** argv)
 {
@@ -87,6 +48,7 @@ int main(int argc, char** argv)
                 argsValid = false;
                 cerr << "Paramètre non valide pour l'option -g : aucun paramètre "<< endl;
                 messageErreur();
+                return 0;
             }
             else
             {
@@ -97,6 +59,7 @@ int main(int argc, char** argv)
                     argsValid = false;
                     cerr << "Paramètre attendu pour -g, mais obtenu : " << nextArg  << endl;
                     messageErreur();
+                    return 0;
                 }
                 else
                 {
@@ -116,6 +79,7 @@ int main(int argc, char** argv)
                 argsValid = false;
                 cerr << "Paramètre non valide pour l'option -t : aucun paramètre " << endl;
                 messageErreur();
+                return 0;
             }
             else
             {
@@ -126,6 +90,7 @@ int main(int argc, char** argv)
                     argsValid = false;
                     cerr << "Paramètre attendu pour -t, mais obtenu : " << nextArg << endl;
                     messageErreur();
+                    return 0;
                 }
                 else if (getHeure(nextArg) == -1)
                 {
@@ -152,6 +117,7 @@ int main(int argc, char** argv)
                 argsValid = false;
                 cerr << "Paramètre non valide pour l'option -u : aucun paramètre" << endl;
                 messageErreur();
+                return 0;
             }
             else
             {
@@ -162,6 +128,7 @@ int main(int argc, char** argv)
                     argsValid = false;
                     cerr << "Paramètre attendu pour -u, mais obtenu : " << nextArg  << endl;
                     messageErreur();
+                    return 0;
                 }
                 else
                 {
@@ -217,6 +184,8 @@ int main(int argc, char** argv)
   {
     affichage->EcritGraphe(nomGraphe);
   }
+
+  return 1;
 }
 
           
