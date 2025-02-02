@@ -125,7 +125,7 @@ void Structure_Log::readFile(string nomFichier, string nomURL){
         while (lectrice.getnextLog()){
            
             Log cur_log(lectrice.getDate(), lectrice.getTime(), lectrice.getActionType(),
-                lectrice.getURLTarget(), lectrice.getStatus(), lectrice.getDataSize(),
+                lectrice.getclearURLTarget(), lectrice.getStatus(), lectrice.getDataSize(),
                 lectrice.getclearURLReferer(), lectrice.getIDNavigator());
 
             NewLog(cur_log);
