@@ -93,6 +93,17 @@ string Lectrice::getURLTarget(){
     return str2.substr(0,posf);
 }
 
+string Lectrice::getclearURLTarget(){
+    string URL = getURLTarget();
+    int len = localURL.length();
+    if (URL.substr(0,len)==localURL){
+        return URL.substr(len+1);
+    }
+    else{
+        return URL;
+    }
+}
+
 string Lectrice::getURLReferer(){
     // On cherche la 3 éme occurence de '"'
     int pos1, pos2, pos3, pos4; //Occurence des i_éme '"'    
