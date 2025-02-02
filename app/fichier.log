@@ -1,0 +1,8 @@
+192.168.0.11 - - [09/Sep/2012:03:07:20 +0200] "GET /notesif/ HTTP/1.1" 302 - "-" "Tiny Tiny RSS/1.5.11 (http://tt-rss.org/)"
+192.168.0.11 - - [09/Sep/2012:03:07:21 +0200] "GET /cas/themes/insa/media/favicon.ico;jsessionid=2D7964ACDC3635AF9E4D95FF891871DC.dsi-vm04 HTTP/1.1" 404 284 "-" "Tiny Tiny RSS/1.5.11 (http://tt-rss.org/)"
+192.168.0.138 - - [09/Sep/2012:03:07:24 +0200] "GET /temps/3IF40.html HTTP/1.1" 200 23907 "http://intranet-if.insa-lyon.fr/temps/3IF39.html" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:11.0) Gecko/20100101 Firefox/11.0"
+192.168.0.138 - - [09/Sep/2012:03:07:31 +0200] "GET /temps/3IF41.html HTTP/1.1" 200 24047 "http://intranet-if.insa-lyon.fr/temps/3IF40.html" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:11.0) Gecko/20100101 Firefox/11.0"
+192.168.0.138 - - [09/Sep/2012:03:07:48 +0200] "GET /temps/3IF42.html HTTP/1.1" 200 22591 "http://intranet-if.insa-lyon.fr/temps/3IF41.html" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:11.0) Gecko/20100101 Firefox/11.0"
+192.168.0.138 - - [09/Sep/2012:03:09:12 +0200] "GET /temps/INSA.jpg HTTP/1.1" 200 184548 "http://intranet-if.insa-lyon.fr/temps/3IF37.html" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:11.0) Gecko/20100101 Firefox/11.0"
+192.168.0.138 - - [09/Sep/2012:03:09:18 +0200] "GET /favicon.ico HTTP/1.1" 200 1700 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:11.0) Gecko/20100101 Firefox/11.0"
+192.168.0.12 - - [09/Sep/2012:03:13:08 +0200] "GET /notesif/RSS/RSS_3IF.xml HTTP/1.1" 200 95847 "-" "Feedfetcher-Google; (+http://www.google.com/feedfetcher.html; 2 subscribers; feed-id=16425187501328177924)"
