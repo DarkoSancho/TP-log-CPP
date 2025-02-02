@@ -75,7 +75,7 @@ public:
     //Donne l'URL nettoyée 
     // Contrat :
     //
-
+    string getclearURLTarget();
 
     string getURLReferer();
     // Mode d'emploi :
