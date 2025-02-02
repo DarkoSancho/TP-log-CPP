@@ -6,7 +6,7 @@ Usage :
 Description :
   Par défaut, sans option, le programme affiche à la console,
   la liste des 10 documents les plus consultés par ordre décroissant de popularité.
-  Aucun fichier ".dot" n'est généré dans ce cas.
+  Aucun fichier ".dot" n'est généré dans ce cas. Le makefile se trouve dans le dossier app.
 
 Options :
   -g nomfichier.dot

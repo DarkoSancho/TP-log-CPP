@@ -1,1 +1,1 @@
-Ce test permet de s'assurer de l'efficacité de notre programme en lui donnant un grand jeu de données (création du graphe)
+Ce test permet de vérifier la bon fonctionnement du programme lorsque le fichier .log est vide (avec l'option -g)
