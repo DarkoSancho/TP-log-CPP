@@ -1,1 +1,1 @@
-Ce test permet de fusionner les options -t et -e, pour garder que les logs d'une certaine heure et exclure des types d'extension
+Ce test permet de s'assurer du bon fonctionnement du top 10 avec un parametre -u et -e pour changer l'URL Local et filtrer les extensions
