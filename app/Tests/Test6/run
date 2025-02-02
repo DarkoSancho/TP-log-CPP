@@ -1,2 +1,1 @@
-../../analog -u URL_Local Fichier.log
-   
+../../analog -g Fichier.dot -u http://site-ecole.fr Fichier.log

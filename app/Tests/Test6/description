@@ -1,1 +1,1 @@
-Ce test permet de vérifier la génération du classement top 10 dans le cas où l'on change l'URL local avec -u
+Ce test permet de vérifier la génération du graphe dans le cas où l'on change l'URL local avec -u
