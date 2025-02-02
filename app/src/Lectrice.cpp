@@ -65,8 +65,8 @@ int Lectrice::getFuseau(){
     string str2 = str.substr(pos+1);
     string sfuseau1= str2.substr(9);
     string sfuseau = sfuseau1.substr(0,sfuseau1.length()-2); // Garde les 3 premiers caractéres
-    int fuseau = stoi(sfuseau);
-    if fuseau>
+    return stoi(sfuseau);
+
 }
 
 int Lectrice::getTime(){
