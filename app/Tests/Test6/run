@@ -1,2 +1,2 @@
-./analog -u URL_Local Fichier.log
+../../analog -u URL_Local Fichier.log
    
