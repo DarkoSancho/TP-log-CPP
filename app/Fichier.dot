@@ -1,2 +1,32 @@
 digraph {
+node15 [label="/temps/4IF18.html"];
+node14 [label="http://site-ecole.fr/temps/4IF17.html"];
+node13 [label="/temps/4IF19.html"];
+node18 [label="http://www.google.fr"];
+node0 [label="http://site-ecole.fr/temps/4IF15.html"];
+node1 [label="/temps/4IF16.html"];
+node3 [label="/temps/3IF37.html"];
+node8 [label="http://site-ecole.fr/temps/style_emploi_du_temps.css"];
+node2 [label="http://site-ecole.fr/temps/"];
+node4 [label="http://site-ecole.fr/temps/3IF38.html"];
+node17 [label="/temps/4IF17.html"];
+node16 [label="http://site-ecole.fr/temps/4IF16.html"];
+node5 [label="/temps/4IF15.html"];
+node6 [label="http://site-ecole.fr/temps/3IF37.html"];
+node7 [label="/temps/3IF38.html"];
+node9 [label="/temps/FondInsa.jpg"];
+node19 [label="/temps/"];
+node12 [label="http://site-ecole.fr/temps/4IF18.html"];
+node10 [label="http://site-ecole.fr/temps/4IF19.html"];
+node11 [label="/temps/4IF20.html"];
+node0 -> node1 [label="1"];
+node2 -> node3 [label="1"];
+node4 -> node5 [label="4"];
+node6 -> node7 [label="2"];
+node8 -> node9 [label="4"];
+node10 -> node11 [label="4"];
+node12 -> node13 [label="2"];
+node14 -> node15 [label="3"];
+node16 -> node17 [label="5"];
+node18 -> node19 [label="4"];
 }
